@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Marina Pizzeria &amp; Steakhouse étlapja – Pizzák, steakek, tészták, saláták, desszertek és italok."/>
+  <title>Étlap – Marina Pizzeria &amp; Steakhouse</title>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav class="nav scrolled">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <span class="nav__logo-main">Marina</span>
+        <span class="nav__logo-sub">Pizzeria &amp; Steakhouse</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html" class="nav__link">Főoldal</a></li>
+        <li><a href="etlap.html" class="nav__link active">Étlap</a></li>
+        <li><a href="rolunk.html" class="nav__link">Rólunk</a></li>
+        <li><a href="galeria.html" class="nav__link">Galéria</a></li>
+        <li><a href="kapcsolat.html" class="nav__link">Kapcsolat</a></li>
+      </ul>
+      <div class="nav__cta">
+        <a href="foglalas.html" class="btn btn-gold"><span>Foglalás</span></a>
+      </div>
+      <button class="nav__hamburger" aria-label="Menü" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="nav__mobile">
+  <a href="index.html" class="nav__mobile-link">Főoldal</a>
+  <a href="etlap.html" class="nav__mobile-link">Étlap</a>
+  <a href="rolunk.html" class="nav__mobile-link">Rólunk</a>
+  <a href="galeria.html" class="nav__mobile-link">Galéria</a>
+  <a href="foglalas.html" class="nav__mobile-link">Foglalás</a>
+  <a href="kapcsolat.html" class="nav__mobile-link">Kapcsolat</a>
+</div>
+
+<!-- ── PAGE HERO ── -->
+<section class="page-hero">
+  <div class="page-hero__bg">
+    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1600&q=85" alt="Étlap háttér" loading="eager"/>
+  </div>
+  <div class="container">
+    <div class="page-hero__content">
+      <div class="label">Konyhaművészetünk</div>
+      <h1 class="page-hero__title">Étlapunk</h1>
+      <p style="color:var(--white-dim);font-size:1.05rem;margin-top:16px;max-width:500px;">
+        Autentikus olasz receptek és prémium steakek — minden fogás egy utazás az ízek világában.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ── MENU ── -->
+<div class="menu-page">
+  <div class="container">
+    <!-- Controls -->
+    <div class="menu-controls reveal">
+      <div class="menu-search">
+        <span class="menu-search-icon">🔍</span>
+        <input type="search" id="menuSearch" placeholder="Keresés az étlapon..." autocomplete="off" aria-label="Étlap keresés"/>
+      </div>
+      <div class="menu-cats">
+        <button class="menu-cat active" data-cat="all">Összes</button>
+        <button class="menu-cat" data-cat="pizza">🍕 Pizza</button>
+        <button class="menu-cat" data-cat="pasta">🍝 Tészta</button>
+        <button class="menu-cat" data-cat="steak">🥩 Steak</button>
+        <button class="menu-cat" data-cat="grill">🔥 Grill</button>
+        <button class="menu-cat" data-cat="burger">🍔 Burger</button>
+        <button class="menu-cat" data-cat="salata">🥗 Saláta</button>
+        <button class="menu-cat" data-cat="dessert">🍰 Desszert</button>
+        <button class="menu-cat" data-cat="ital">🍷 Ital</button>
+      </div>
+    </div>
+
+    <!-- PIZZÁK -->
+    <div class="menu-section" id="sec-pizza">
+      <h2 class="menu-section-title reveal">🍕 Pizzák</h2>
+      <div class="menu-grid">
+        <div class="menu-item reveal" data-cat="pizza" data-name="marina signature pizza">
+          <img class="menu-item__img" src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=200&q=80" alt="Marina Signature" loading="lazy"/>
+          <div class="menu-item__body">
+            <div class="menu-item__name">Marina Signature</div>
+            <div class="menu-item__desc">San Marzano paradicsom, buffalo mozzarella, prosciutto crudo, rukkola, parmezán, balzsamecet</div>
+            <div class="menu-item__footer">
+              <span class="menu-item__price">3 990 Ft</span>
+              <span class="menu-item__tag">Bestseller</span>
+            </div>
+          </div>
+        </div>
+        <div class="menu-item reveal" data-cat="pizza" data-name="diavola pizza">
+          <img class="menu-item__img" src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=200&q=80" alt="Diavola" loading="lazy"/>
+          <div class="menu-item__body">
+            <div class="menu-item__name">Diavola</div>
+            <div class="menu-item__desc">Paradicsom, mozzarella, szalámi, calabrese, chili olaj, kapribogyó</div>
+            <div class="menu-item__footer">
+              <span class="menu-item__price">3 490 Ft</span>
+              <span class="menu-item__tag">Csípős 🌶</span>
+            </div>
+          </div>
+        </div>
+        <div class="menu-item reveal" data-cat="pizza" data-name="quattro formaggi pizza">
+          <img class="menu-item__img" src="https://images.unsplash.com/photo-1548369937-47519962c11a?w=200&q=80" alt="Quattro Formaggi" loading="lazy"/>
+          <div class="menu-item__body">
+            <div class="menu-item__name">Quattro Formaggi</div>
+            <div class="menu-item__desc">Mozzarella, gorgonzola, fontina, parmezán, dió, méz</div>
+            <div class="menu-item__footer">
+              <span class="menu-item__price">3 690 Ft</span>
+            </div>
+          </div>
+        </div>
+        <div class="menu-item reveal" data-cat="pizza" data-name="tartufo funghi pizza">
+          <img class="menu-item__img" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=200&q=80" alt="Tartufo e Funghi" loading="lazy"/>
+          <div class="menu-item__body">
+            <div class="menu-item__name">Tartufo e Funghi</div>
+            <div class="menu-item__desc">Fekete szarvasgomba krém, erdei gombák, fontina, friss kakukkfű</div>
+            <div class="menu-item__footer">
+              <span class="menu-item__price">4 890 Ft</span>
+              <span class="menu-item__tag">Prémium</span>
+            </div>
+          </div>
+        </div>
+        <div class="menu-item reveal" data-cat="pizza" data-name="margherita pizza">
+          <img class="menu-item__img" src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=200&q=80" alt="Margherita" loading="lazy"/>
+          <div class="menu-item__body">
+            <div class="menu-item__name">Margherita DOP</div>
+            <div class="menu-item__desc">San Marzano paradicsom, buffalo mozzarella DOP, friss bazsalikom, extraszűz olívaolaj</div>
+            <div class="menu-item__footer">
+              <span class="menu-item__price">2 990 Ft</span>
+            </div>
+          </div>
+        </div>
+        <div class="menu-item reveal" data-cat="pizza" data-name="pizza verdure grigliate">
+          <img class="menu-item__img" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=200&q=80" alt="Verdure Grigliate" loading="lazy"/>
+          <div class="menu-item__body">
+            <div class="menu-item__name">Verdure Grigliate</div>
+            <div class="menu-item__desc">Mozzarella, grillezett zöldségek, pesto, szárított paradicsom (vegetáriánus)</div>
+            <div class="menu-item__footer">
+              <span class="menu-item__price">3 290 Ft</span>
+              <span class="menu-item__tag">Vegán ható</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TÉSZTÁK -->
+    <div class="menu-section" id="sec-pasta">
+      <h2 class="menu-section-title reveal">🍝 Tészták</h2>
+      <div class="menu-grid">
+        <div class="menu-item reveal" data-cat="pasta" data-name="spaghetti carbonara">
+          <img class="menu-item__img" src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=200&q=80" alt="Carbonara" loading="lazy"/>
+          <div class="menu-item__body">
+            <div class="menu-item__name">Spaghetti Carbonara</div>
+            <div class="menu-item__desc">Guanciale, pecorino romano, friss tojássárgája, fekete bors — tradicionális római recept</div>
+            <div class="menu-item__footer">
+              <span class="menu-item__price">3 290 Ft</span>
+              <span class="menu-item__tag">Bestseller</span>
+            </div>
+          </div>
+        </div>
+        <div class="menu-item reveal" data-cat="pasta" data-name="tagliatelle ragu bolognese">
+          <img class="menu-item__img" src="https://images.unsplash.com/photo-1548943487-a2e4e43b4853?w=200&q=80" alt="Bolognese" loading="lazy"/>
+          <div class="menu-item__body">
+            <div class="menu-item__name">Tagliatelle Bolognese</div>
+            <div class="menu-item__desc">Házi tagliatelle, lassú főzésű marha-sertés ragù, parmezán</div>
+            <div class="menu-item__footer">
+              <span class="menu-item__price">3 490 Ft</span>
+            </div>
+          </div>
+        </div>
+        <div class="menu-item reveal" data-cat="pasta" data-name="penne arrabiata">
+          <img class="menu-item__img" src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=200&q=80" alt="Arrabiata" loading="lazy"/>
+          <div class="menu-item__body">
+            <div class="menu-item__name">Penne all'Arrabiata</div>
+            <div class="menu-item__desc">Fűszeres paradicsomszósz, fokhagyma, chili, friss bazsalikom</div>
+            <div class="menu-item__footer">
+              <span class="menu-item__price">2 790 Ft</span>
+              <span class="menu-item__tag">Csípős 🌶</span>
+            </div>
+          </div>
+        </div>
+        <div class="menu-item reveal" data-cat="pasta" data-name="linguine gamberi">
+          <img class="menu-item__img" src="https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?w=200&q=80" alt="Linguine Gamberi" loading="lazy"/>
+          <div class="menu-item__body">
+            <div class="menu-item__name">Linguine ai Gamberi</div>
+            <div class="menu-item__desc">Tigrisrák, cherry paradicsom, kapribogyó, fehérbor, fokhagyma, petrezselyem</div>
+            <div class="menu-item__footer">
+              <span class="menu-item__price">4 490 Ft</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEAKEK -->
+    <div class="menu-section" id="sec-steak">
+      <h2 class="menu-section-title reveal">🥩 Steakek</h2>
+      <div class="menu-grid">
+        <div class="menu-item reveal" data-cat="steak" data-name="ribeye black angus steak">
+          <img class="menu-item__img" src="https://images.unsplash.com/photo-1558030006-450675393462?w=200&q=80" alt="Ribeye" loading="lazy"/>
+          <div class="menu-item__body">
+            <div class="menu-item__name">Black Angus Ribeye (350g)</div>
+            <div class="menu-item__desc">Érlelt ribeye, vaj-kakukkfű mártás, sült fokhagyma, szezonális köret</div>
+            <div class="menu-item__footer">
+              <span class="menu-item__price">8 490 Ft</span>
+              <span class="menu-item__tag">Prémium</span>
+            </div>
+          </div>
+        </div>
+        <div class="menu-item reveal" data-cat="steak" data-name="tomahawk steak">
+          <img class="menu-item__img" src="https://images.unsplash.com/photo-1544025162-d76538b2a681?w=200&q=80" alt="Tomahawk" loading="lazy"/>
+          <div class="menu-item__body">
+            <div class="menu-item__name">Tomahawk (800g)</div>
+            <div class="menu-item__desc">Érlelt Angus, kékpenész vajjal, portói borjús mártással, grillezett zöldségek</div>
+            <div class="menu-item__footer">
+              <span class="menu-item__price">14 990 Ft</span>
+              <span class="menu-item__tag">Séf különlegesség</span>
+            </div>
+          </div>
+        </div>
+        <div class="menu-item reveal" data-cat="steak" data-name="filet mignon tenderloin steak">
+          <img class="menu-item__img" src="https://images.unsplash.com/photo-1558030006-450675393462?w=200&q=80" alt="Filet Mignon" loading="lazy"/>
+          <div class="menu-item__body">
+            <div class="menu-item__name">Filet Mignon (220g)</div>
+            <div class="menu-item__desc">Szűzpecsenye, borjúalap mártás, szarvasgomba vaj, burgonyapüré</div>
+            <div class="menu-item__footer">
+              <span class="menu-item__price">9 990 Ft</span>
+            </div>
+          </div>
+        </div>
+        <div class="menu-item reveal" data-cat="steak" data-name="new york strip steak">
+          <img class="menu-item__img" src="https://images.unsplash.com/photo-1544025162-d76538b2a681?w=200&q=80" alt="NY Strip" loading="lazy"/>
+          <div class="menu-item__body">
+            <div class="menu-item__name">New York Strip (300g)</div>
+            <div class="menu-item__desc">Hagyományos szteakhús, fokhagymás vaj, sült burgonya, BBQ szósz</div>
+            <div class="menu-item__footer">
+              <span class="menu-item__price">7 490 Ft</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GRILL -->
+    <div class="menu-section" id="sec-grill">
+      <h2 class="menu-section-title reveal">🔥 Grill ételek</h2>
+      <div class="menu-grid">
+        <div class="menu-item reveal" data-cat="grill" data-name="gamberi alla griglia grillezett tigrisrák">
+          <img class="menu-item__img" src="https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=200&q=80" alt="Gamberi" loading="lazy"/>
+          <div class="menu-item__body">
+            <div class="menu-item__name">Gamberi alla Griglia</div>
+            <div class="menu-item__desc">Grillezett tigrisrák, citromos-fokhagymás vaj, polenta, friss saláta</div>
+            <div class="menu-item__footer">
+              <span class="menu-item__price">5 490 Ft</span>
+            </div>
+          </div>
+        </div>
+        <div class="menu-item reveal" data-cat="grill" data-name="csirke grillezett">
+          <img class="menu-item__img" src="https://images.unsplash.com/photo-1518492104633-130d0cc84637?w=200&q=80" alt="Pollo" loading="lazy"/>
+          <div class="menu-item__body">
+            <div class="menu-item__name">Pollo alla Griglia</div>
+            <div class="menu-item__desc">Grillezett csirkemell, citromos-oregánós pác, grillezett zöldségek, tzatziki</div>
+            <div class="menu-item__footer">
+              <span class="menu-item__price">4 290 Ft</span>
+            </div>
+          </div>
+        </div>
+        <div class="menu-item reveal" data-cat="grill" data-name="grillezett zöldségek">
+          <img class="menu-item__img" src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=200&q=80" alt="Grillezett zöldségek" loading="lazy"/>
+          <div class="menu-item__body">
+            <div class="menu-item__name">Verdure Grigliate Miste</div>
+            <div class="menu-item__desc">Szezonális grillezett zöldségek, balzsamecet, friss fűszernövények</div>
+            <div class="menu-item__footer">
+              <span class="menu-item__price">2 490 Ft</span>
+              <span class="menu-item__tag">Vegetáriánus</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BURGEREK -->
+    <div class="menu-section" id="sec-burger">
+      <h2 class="menu-section-title reveal">🍔 Burgerek</h2>
+      <div class="menu-grid">
+        <div class="menu-item reveal" data-cat="burger" data-name="marina burger">
+          <img class="menu-item__img" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=200&q=80" alt="Marina Burger" loading="lazy"/>
+          <div class="menu-item__body">
+            <div class="menu-item__name">Marina Classic Burger</div>
+            <div class="menu-item__desc">180g marhahús pogácsa, cheddar, jégsaláta, paradicsom, hagyma, házi szósz, briós zsemle</div>
+            <div class="menu-item__footer">
+              <span class="menu-item__price">3 890 Ft</span>
+            </div>
+          </div>
+        </div>
+        <div class="menu-item reveal" data-cat="burger" data-name="truffle burger szarvasgomba">
+          <img class="menu-item__img" src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=200&q=80" alt="Truffle Burger" loading="lazy"/>
+          <div class="menu-item__body">
+            <div class="menu-item__name">Truffle Burger</div>
+            <div class="menu-item__desc">180g marhahús, szarvasgomba mayo, karamellizált hagyma, gruyère, rukkola</div>
+            <div class="menu-item__footer">
+              <span class="menu-item__price">4 690 Ft</span>
+              <span class="menu-item__tag">Prémium</span>
+            </div>
+          </div>
+        </div>
+        <div class="menu-item reveal" data-cat="burger" data-name="vegán burger">
+          <img class="menu-item__img" src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=200&q=80" alt="Vegán Burger" loading="lazy"/>
+          <div class="menu-item__body">
+            <div class="menu-item__name">Green Marina Burger</div>
+            <div class="menu-item__desc">Növényi pogácsa, avokádó, cherry paradicsom, pesto, vegán briós</div>
+            <div class="menu-item__footer">
+              <span class="menu-item__price">3 490 Ft</span>
+              <span class="menu-item__tag">Vegán</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SALÁTÁK -->
+    <div class="menu-section" id="sec-salata">
+      <h2 class="menu-section-title reveal">🥗 Saláták</h2>
+      <div class="menu-grid">
+        <div class="menu-item reveal" data-cat="salata" data-name="caesar saláta">
+          <img class="menu-item__img" src="https://images.unsplash.com/photo-1550304943-4f24f54ddde9?w=200&q=80" alt="Caesar" loading="lazy"/>
+          <div class="menu-item__body">
+            <div class="menu-item__name">Caesar Saláta</div>
+            <div class="menu-item__desc">Rómaisaláta, parmezán, kruton, grillezett csirke, házi Caesar dressing</div>
+            <div class="menu-item__footer">
+              <span class="menu-item__price">2 890 Ft</span>
+            </div>
+          </div>
+        </div>
+        <div class="menu-item reveal" data-cat="salata" data-name="caprese saláta">
+          <img class="menu-item__img" src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=200&q=80" alt="Caprese" loading="lazy"/>
+          <div class="menu-item__body">
+            <div class="menu-item__name">Insalata Caprese</div>
+            <div class="menu-item__desc">Buffalo mozzarella, érett paradicsom, bazsalikom, extraszűz olívaolaj, balzsamecet krém</div>
+            <div class="menu-item__footer">
+              <span class="menu-item__price">2 490 Ft</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DESSZERTEK -->
+    <div class="menu-section" id="sec-dessert">
+      <h2 class="menu-section-title reveal">🍰 Desszertek</h2>
+      <div class="menu-grid">
+        <div class="menu-item reveal" data-cat="dessert" data-name="tiramisu desszert">
+          <img class="menu-item__img" src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=200&q=80" alt="Tiramisu" loading="lazy"/>
+          <div class="menu-item__body">
+            <div class="menu-item__name">Tiramisù della Casa</div>
+            <div class="menu-item__desc">Házi recept, mascarpon krém, savoiardi, espresso, kakaópor</div>
+            <div class="menu-item__footer">
+              <span class="menu-item__price">1 890 Ft</span>
+              <span class="menu-item__tag">Házi készítésű</span>
+            </div>
+          </div>
+        </div>
+        <div class="menu-item reveal" data-cat="dessert" data-name="panna cotta desszert">
+          <img class="menu-item__img" src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=200&q=80" alt="Panna Cotta" loading="lazy"/>
+          <div class="menu-item__body">
+            <div class="menu-item__name">Panna Cotta</div>
+            <div class="menu-item__desc">Vanília, friss eper coulis, pisztáciamorzsa</div>
+            <div class="menu-item__footer">
+              <span class="menu-item__price">1 690 Ft</span>
+            </div>
+          </div>
+        </div>
+        <div class="menu-item reveal" data-cat="dessert" data-name="csokoládé fondant desszert">
+          <img class="menu-item__img" src="https://images.unsplash.com/photo-1624353365286-3f8d62daad51?w=200&q=80" alt="Fondant" loading="lazy"/>
+          <div class="menu-item__body">
+            <div class="menu-item__name">Cioccolato Fondant</div>
+            <div class="menu-item__desc">Meleg csokoládé fondant, vaníliafagylalt, friss bogyósok</div>
+            <div class="menu-item__footer">
+              <span class="menu-item__price">2 190 Ft</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ITALOK -->
+    <div class="menu-section" id="sec-ital">
+      <h2 class="menu-section-title reveal">🍷 Italok</h2>
+      <div class="menu-grid">
+        <div class="menu-item reveal" data-cat="ital" data-name="bor vörösbor fehérbor">
+          <img class="menu-item__img" src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=200&q=80" alt="Borkínálat" loading="lazy"/>
+          <div class="menu-item__body">
+            <div class="menu-item__name">Olasz Vörösbor (dl)</div>
+            <div class="menu-item__desc">Barolo, Brunello, Chianti Classico, Amarone — kérje sommelier-ünk ajánlását</div>
+            <div class="menu-item__footer">
+              <span class="menu-item__price">790 Ft/dl-től</span>
+            </div>
+          </div>
+        </div>
+        <div class="menu-item reveal" data-cat="ital" data-name="cocktail aperol spritz campari">
+          <img class="menu-item__img" src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=200&q=80" alt="Koktélok" loading="lazy"/>
+          <div class="menu-item__body">
+            <div class="menu-item__name">Signature Koktélok</div>
+            <div class="menu-item__desc">Aperol Spritz, Campari Soda, Negroni, Hugo, Bellini — friss gyümölcsökkel</div>
+            <div class="menu-item__footer">
+              <span class="menu-item__price">1 490 Ft-tól</span>
+            </div>
+          </div>
+        </div>
+        <div class="menu-item reveal" data-cat="ital" data-name="espresso kávé cappuccino">
+          <img class="menu-item__img" src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=200&q=80" alt="Kávé" loading="lazy"/>
+          <div class="menu-item__body">
+            <div class="menu-item__name">Prémium Kávék</div>
+            <div class="menu-item__desc">Espresso, cappuccino, latte, americano — olasz blend pörkölés</div>
+            <div class="menu-item__footer">
+              <span class="menu-item__price">490 Ft-tól</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Allergen note -->
+    <div style="border:1px solid var(--border);border-radius:4px;padding:24px;margin-top:40px;" class="reveal">
+      <p style="font-size:0.85rem;color:var(--white-dim);line-height:1.8;">
+        <strong style="color:var(--gold);">Allergén információ:</strong> Éttermi személyzetünk készséggel tájékoztatja Önt az allergénekről. Az árak tartalmazzák az ÁFÁ-t. A képek illusztrációk.
+        Étlapunk szezonálisan változik. Kérjük, jelezze ételérzékenységét vagy étrendspecifikus kérését foglaláskor!
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand-name">Marina</div>
+        <div class="footer__brand-sub">Pizzeria &amp; Steakhouse</div>
+        <p class="footer__brand-text">Prémium olasz konyha és steakhouse élmény Budapest szívében.</p>
+        <div class="footer__social">
+          <a href="#" class="footer__social-link" aria-label="Facebook">f</a>
+          <a href="#" class="footer__social-link" aria-label="Instagram">📷</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Oldalak</div>
+        <ul class="footer__links">
+          <li><a href="index.html" class="footer__link">Főoldal</a></li>
+          <li><a href="etlap.html" class="footer__link">Étlap</a></li>
+          <li><a href="rolunk.html" class="footer__link">Rólunk</a></li>
+          <li><a href="galeria.html" class="footer__link">Galéria</a></li>
+          <li><a href="foglalas.html" class="footer__link">Foglalás</a></li>
+          <li><a href="kapcsolat.html" class="footer__link">Kapcsolat</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title">Nyitvatartás</div>
+        <div class="footer__info">
+          <div class="footer__info-item"><span class="footer__info-icon">🕐</span><span>H–Cs: 11:00 – 22:00</span></div>
+          <div class="footer__info-item"><span class="footer__info-icon">🕐</span><span>P–Szo: 11:00 – 23:30</span></div>
+          <div class="footer__info-item"><span class="footer__info-icon">🕐</span><span>Vas: 12:00 – 22:00</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Elérhetőség</div>
+        <div class="footer__info">
+          <div class="footer__info-item"><span class="footer__info-icon">📍</span><span>1051 Budapest,<br/>Október 6. utca 14.</span></div>
+          <div class="footer__info-item"><span class="footer__info-icon">📞</span><a href="tel:+3620123456" class="footer__link">+36 20 123 456</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2025 Marina Pizzeria &amp; Steakhouse.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Marina Pizzeria &amp; Steakhouse – Prémium olasz konyha és steakhouse élmény. Foglaljon asztalt még ma!"/>
+  <meta name="keywords" content="marina pizzeria, steakhouse, olasz étterem, pizza, steak, foglalás"/>
+  <meta property="og:title" content="Marina Pizzeria &amp; Steakhouse"/>
+  <meta property="og:description" content="Prémium olasz konyha és steakhouse élmény."/>
+  <meta property="og:type" content="website"/>
+  <title>Marina Pizzeria &amp; Steakhouse</title>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='28'>🍕</text></svg>"/>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav class="nav" role="navigation" aria-label="Főnavigáció">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="Marina főoldal">
+        <span class="nav__logo-main">Marina</span>
+        <span class="nav__logo-sub">Pizzeria &amp; Steakhouse</span>
+      </a>
+      <ul class="nav__links" role="list">
+        <li><a href="index.html" class="nav__link active">Főoldal</a></li>
+        <li><a href="etlap.html" class="nav__link">Étlap</a></li>
+        <li><a href="rolunk.html" class="nav__link">Rólunk</a></li>
+        <li><a href="galeria.html" class="nav__link">Galéria</a></li>
+        <li><a href="kapcsolat.html" class="nav__link">Kapcsolat</a></li>
+      </ul>
+      <div class="nav__cta">
+        <a href="tel:+3620123456" class="btn btn-outline" style="padding:12px 24px;font-size:12px;">
+          📞 +36 20 123 456
+        </a>
+        <a href="foglalas.html" class="btn btn-gold">
+          <span>Foglalás</span>
+        </a>
+      </div>
+      <button class="nav__hamburger" aria-label="Menü megnyitása" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="nav__mobile" role="dialog" aria-label="Mobilnavigáció">
+  <a href="index.html" class="nav__mobile-link">Főoldal</a>
+  <a href="etlap.html" class="nav__mobile-link">Étlap</a>
+  <a href="rolunk.html" class="nav__mobile-link">Rólunk</a>
+  <a href="galeria.html" class="nav__mobile-link">Galéria</a>
+  <a href="foglalas.html" class="nav__mobile-link">Foglalás</a>
+  <a href="kapcsolat.html" class="nav__mobile-link">Kapcsolat</a>
+  <a href="foglalas.html" class="btn btn-gold" style="align-self:flex-start;margin-top:auto;">
+    <span>Asztalt foglalok</span>
+  </a>
+</div>
+
+<!-- ── HERO ── -->
+<section class="hero" aria-label="Főoldal bevezető">
+  <div class="hero__bg"></div>
+  <div class="container">
+    <div class="hero__content">
+      <div class="hero__eyebrow">Prémium étterem – 2015 óta</div>
+      <h1 class="hero__title">
+        Az ízek<br/><em>mesterkeze</em><br/>asztalodnál
+      </h1>
+      <p class="hero__subtitle">
+        Autentikus olasz pizzák, tökéletes steakek és szenvedélyes konyhaművészet — ahol minden fogás egy élmény.
+      </p>
+      <div class="hero__actions">
+        <a href="foglalas.html" class="btn btn-gold">
+          <span>🗓 Asztalt foglalok</span>
+        </a>
+        <a href="etlap.html" class="btn btn-outline">
+          Étlap megtekintése →
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="hero__badge" aria-hidden="true">
+    <span class="hero__badge-year">★ 4.9</span>
+    <span class="hero__badge-text">Google<br/>értékelés</span>
+  </div>
+  <div class="hero__scroll" aria-hidden="true">
+    <div class="hero__scroll-line"></div>
+    <span>Görgess</span>
+  </div>
+</section>
+
+<!-- ── WHY MARINA ── -->
+<section class="section why" aria-labelledby="why-title">
+  <div class="container">
+    <div class="why__grid">
+      <div>
+        <div class="label reveal">Miért minket válasszon?</div>
+        <h2 class="h-section reveal" id="why-title" data-delay="100">
+          Ahol a minőség<br/>nem kompromisszum
+        </h2>
+        <p class="reveal" style="color:var(--white-dim);margin-top:20px;line-height:1.8;" data-delay="180">
+          A Marina Pizzeria &amp; Steakhouse-ban hiszünk abban, hogy egy étkezés több, mint táplálkozás — egy élmény, amelyre érdemes emlékezni. Válogatott alapanyagaink, képzett séfjeink és meghitt légkörünk garantálják, hogy minden látogatás különleges legyen.
+        </p>
+        <div class="why__features">
+          <div class="why__feature reveal" data-delay="200">
+            <div class="why__feature-icon">🌿</div>
+            <div class="why__feature-title">Friss alapanyagok</div>
+            <div class="why__feature-text">Naponta érkező helyi és importált olasz hozzávalók.</div>
+          </div>
+          <div class="why__feature reveal" data-delay="280">
+            <div class="why__feature-icon">🔥</div>
+            <div class="why__feature-title">Fatüzeléses kemence</div>
+            <div class="why__feature-text">Tradicionális nápolyi pizza, 480°C-on sütve.</div>
+          </div>
+          <div class="why__feature reveal" data-delay="360">
+            <div class="why__feature-icon">🥩</div>
+            <div class="why__feature-title">Prémium steakek</div>
+            <div class="why__feature-text">Válogatott marhahús, érlelt és gondosan elkészítve.</div>
+          </div>
+          <div class="why__feature reveal" data-delay="440">
+            <div class="why__feature-icon">🍷</div>
+            <div class="why__feature-title">Borkínálat</div>
+            <div class="why__feature-text">Gondosan összeállított olasz és hazai borlap.</div>
+          </div>
+        </div>
+        <div class="why__stat-row" style="margin-top:48px;">
+          <div class="why__stat reveal" data-delay="200">
+            <span class="why__stat-num">9+</span>
+            <span class="why__stat-label">Év tapasztalat</span>
+          </div>
+          <div class="why__stat reveal" data-delay="300">
+            <span class="why__stat-num">80+</span>
+            <span class="why__stat-label">Menüpont</span>
+          </div>
+          <div class="why__stat reveal" data-delay="400">
+            <span class="why__stat-num">4.9</span>
+            <span class="why__stat-label">Értékelés</span>
+          </div>
+        </div>
+      </div>
+      <div class="why__image reveal-right">
+        <img class="why__img-main"
+          src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=85"
+          alt="Marina étterem belső tér" loading="lazy"/>
+        <img class="why__img-accent"
+          src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=500&q=80"
+          alt="Prémium pizza" loading="lazy"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── POPULAR DISHES ── -->
+<section class="section popular" aria-labelledby="popular-title">
+  <div class="container">
+    <div class="popular__header">
+      <div>
+        <div class="label reveal">Vendégeink kedvencei</div>
+        <h2 class="h-section reveal" id="popular-title">Legnépszerűbb fogásaink</h2>
+      </div>
+      <div class="popular__tabs reveal">
+        <button class="popular__tab active" data-cat="all">Összes</button>
+        <button class="popular__tab" data-cat="pizza">Pizza</button>
+        <button class="popular__tab" data-cat="steak">Steak</button>
+        <button class="popular__tab" data-cat="pasta">Tészta</button>
+      </div>
+    </div>
+    <div class="popular__grid">
+      <!-- Card 1 -->
+      <article class="dish-card reveal" data-cat="pizza" data-delay="0">
+        <div class="dish-card__img-wrap">
+          <img class="dish-card__img"
+            src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600&q=80"
+            alt="Marina Signature Pizza" loading="lazy"/>
+          <span class="dish-card__badge">Bestseller</span>
+        </div>
+        <div class="dish-card__body">
+          <div class="dish-card__cat">Pizza</div>
+          <h3 class="dish-card__name">Marina Signature</h3>
+          <p class="dish-card__desc">San Marzano paradicsom, buffalo mozzarella, prosciutto crudo, rukkola, parmezán, balzsamecet.</p>
+          <div class="dish-card__footer">
+            <span class="dish-card__price"><sup>Ft </sup>3 990</span>
+            <a href="etlap.html" class="btn btn-outline-gold" style="padding:8px 18px;font-size:11px;">Rendelek</a>
+          </div>
+        </div>
+      </article>
+      <!-- Card 2 -->
+      <article class="dish-card reveal" data-cat="steak" data-delay="80">
+        <div class="dish-card__img-wrap">
+          <img class="dish-card__img"
+            src="https://images.unsplash.com/photo-1558030006-450675393462?w=600&q=80"
+            alt="Ribeye steak" loading="lazy"/>
+          <span class="dish-card__badge" style="background:var(--gold);color:var(--black);">Séf ajánlat</span>
+        </div>
+        <div class="dish-card__body">
+          <div class="dish-card__cat">Steak</div>
+          <h3 class="dish-card__name">Black Angus Ribeye</h3>
+          <p class="dish-card__desc">350g érlelt Black Angus ribeye, vaj-kakukkfű mártással, sült fokhagymával és szezonális körettel.</p>
+          <div class="dish-card__footer">
+            <span class="dish-card__price"><sup>Ft </sup>8 490</span>
+            <a href="etlap.html" class="btn btn-outline-gold" style="padding:8px 18px;font-size:11px;">Rendelek</a>
+          </div>
+        </div>
+      </article>
+      <!-- Card 3 -->
+      <article class="dish-card reveal" data-cat="pasta" data-delay="160">
+        <div class="dish-card__img-wrap">
+          <img class="dish-card__img"
+            src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&q=80"
+            alt="Carbonara pasta" loading="lazy"/>
+        </div>
+        <div class="dish-card__body">
+          <div class="dish-card__cat">Tészta</div>
+          <h3 class="dish-card__name">Spaghetti Carbonara</h3>
+          <p class="dish-card__desc">Tradicionális római recept, guanciale, pecorino romano, friss tojássárgája, fekete bors.</p>
+          <div class="dish-card__footer">
+            <span class="dish-card__price"><sup>Ft </sup>3 290</span>
+            <a href="etlap.html" class="btn btn-outline-gold" style="padding:8px 18px;font-size:11px;">Rendelek</a>
+          </div>
+        </div>
+      </article>
+    </div>
+    <div style="text-align:center;margin-top:48px;" class="reveal">
+      <a href="etlap.html" class="btn btn-outline">Teljes étlap megtekintése →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CHEF'S RECOMMENDATION ── -->
+<section class="section chef" aria-labelledby="chef-title">
+  <div class="container">
+    <div class="chef__inner">
+      <div class="chef__img-wrap reveal-left">
+        <img class="chef__img"
+          src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=700&q=85"
+          alt="Marco Ferretti séf" loading="lazy"/>
+        <div class="chef__img-overlay">
+          <div class="chef__img-overlay-name">Marco Ferretti</div>
+          <div class="chef__img-overlay-role">Executive Chef</div>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <div class="label">Séf ajánlata</div>
+        <h2 class="h-section" id="chef-title">A hét különlegességei</h2>
+        <blockquote class="chef__quote">
+          "Minden fogásomba beleteszem a szívemet. A legjobb hozzávaló az a szenvedély, amit a tányérra teszünk."
+        </blockquote>
+        <div class="chef__special">
+          <div class="chef__special-item">
+            <div style="font-size:1.8rem;">🥩</div>
+            <div>
+              <div class="chef__special-name">Tomahawk Steak (800g)</div>
+              <div class="chef__special-desc">Érlelt Angus, kékpenész vajjal, portói borjús mártással</div>
+            </div>
+            <div class="chef__special-price">14 990 Ft</div>
+          </div>
+          <div class="chef__special-item">
+            <div style="font-size:1.8rem;">🦐</div>
+            <div>
+              <div class="chef__special-name">Gamberi alla Griglia</div>
+              <div class="chef__special-desc">Grillezett tigrisrák, citromos-fokhagymás vaj, polenta</div>
+            </div>
+            <div class="chef__special-price">5 490 Ft</div>
+          </div>
+          <div class="chef__special-item">
+            <div style="font-size:1.8rem;">🍕</div>
+            <div>
+              <div class="chef__special-name">Tartufo e Funghi Pizza</div>
+              <div class="chef__special-desc">Fekete szarvasgomba krém, erdei gombák, fontina sajt</div>
+            </div>
+            <div class="chef__special-price">4 890 Ft</div>
+          </div>
+        </div>
+        <div style="margin-top:36px;">
+          <a href="foglalas.html" class="btn btn-gold"><span>Asztalt foglalok</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── REVIEWS ── -->
+<section class="section reviews" aria-labelledby="reviews-title">
+  <div class="container">
+    <div style="text-align:center;">
+      <div class="label reveal" style="justify-content:center;">Vendégeink mondják</div>
+      <h2 class="h-section reveal" id="reviews-title">Amit rólunk gondolnak</h2>
+    </div>
+  </div>
+  <div class="reviews__track-wrap">
+    <div class="reviews__track" aria-label="Vélemények csúszda">
+      <!-- Reviews – doubled for infinite loop -->
+      <article class="review-card">
+        <div class="review-card__stars">★★★★★</div>
+        <p class="review-card__text">"Messze a legjobb steak, amit valaha ettem Budapesten. A ribeye tökéletes volt, a kiszolgálás figyelmes és professzionális. Mindenképpen visszatérünk!"</p>
+        <div class="review-card__author">
+          <img class="review-card__avatar" src="https://i.pravatar.cc/80?img=11" alt="Kovács Péter"/>
+          <div>
+            <div class="review-card__name">Kovács Péter</div>
+            <div class="review-card__source">Google ★★★★★</div>
+          </div>
+        </div>
+      </article>
+      <article class="review-card">
+        <div class="review-card__stars">★★★★★</div>
+        <p class="review-card__text">"A pizzák fenomenálisak, a fatüzeléses kemence érezhető. A Marina Signature az egyik kedvencem lett, már hatodszor rendelem."</p>
+        <div class="review-card__author">
+          <img class="review-card__avatar" src="https://i.pravatar.cc/80?img=5" alt="Nagy Eszter"/>
+          <div>
+            <div class="review-card__name">Nagy Eszter</div>
+            <div class="review-card__source">TripAdvisor ★★★★★</div>
+          </div>
+        </div>
+      </article>
+      <article class="review-card">
+        <div class="review-card__stars">★★★★★</div>
+        <p class="review-card__text">"Az étterem hangulata lenyűgöző, a személyzet rendkívül kedves. A carbonara autentikus, pontosan olyan, mint Rómában. Bravo!"</p>
+        <div class="review-card__author">
+          <img class="review-card__avatar" src="https://i.pravatar.cc/80?img=32" alt="Szabó Tamás"/>
+          <div>
+            <div class="review-card__name">Szabó Tamás</div>
+            <div class="review-card__source">Google ★★★★★</div>
+          </div>
+        </div>
+      </article>
+      <article class="review-card">
+        <div class="review-card__stars">★★★★★</div>
+        <p class="review-card__text">"Évfordulónkat ünnepeltük a Marinában, és mindent megtett a személyzet, hogy különleges legyen az este. Gyönyörű asztaldekoráció, figyelmes kiszolgálás."</p>
+        <div class="review-card__author">
+          <img class="review-card__avatar" src="https://i.pravatar.cc/80?img=45" alt="Kiss Anita"/>
+          <div>
+            <div class="review-card__name">Kiss Anita</div>
+            <div class="review-card__source">Facebook ★★★★★</div>
+          </div>
+        </div>
+      </article>
+      <article class="review-card">
+        <div class="review-card__stars">★★★★☆</div>
+        <p class="review-card__text">"A desszertek fantasztikusak, a tiramisù mennyei volt. Kicsit hosszú volt a várakozási idő, de megérte minden percét."</p>
+        <div class="review-card__author">
+          <img class="review-card__avatar" src="https://i.pravatar.cc/80?img=60" alt="Horváth Gábor"/>
+          <div>
+            <div class="review-card__name">Horváth Gábor</div>
+            <div class="review-card__source">Google ★★★★☆</div>
+          </div>
+        </div>
+      </article>
+      <!-- Duplicate for loop -->
+      <article class="review-card">
+        <div class="review-card__stars">★★★★★</div>
+        <p class="review-card__text">"Messze a legjobb steak, amit valaha ettem Budapesten. A ribeye tökéletes volt, a kiszolgálás figyelmes és professzionális. Mindenképpen visszatérünk!"</p>
+        <div class="review-card__author">
+          <img class="review-card__avatar" src="https://i.pravatar.cc/80?img=11" alt="Kovács Péter"/>
+          <div>
+            <div class="review-card__name">Kovács Péter</div>
+            <div class="review-card__source">Google ★★★★★</div>
+          </div>
+        </div>
+      </article>
+      <article class="review-card">
+        <div class="review-card__stars">★★★★★</div>
+        <p class="review-card__text">"A pizzák fenomenálisak, a fatüzeléses kemence érezhető. A Marina Signature az egyik kedvencem lett, már hatodszor rendelem."</p>
+        <div class="review-card__author">
+          <img class="review-card__avatar" src="https://i.pravatar.cc/80?img=5" alt="Nagy Eszter"/>
+          <div>
+            <div class="review-card__name">Nagy Eszter</div>
+            <div class="review-card__source">TripAdvisor ★★★★★</div>
+          </div>
+        </div>
+      </article>
+      <article class="review-card">
+        <div class="review-card__stars">★★★★★</div>
+        <p class="review-card__text">"Az étterem hangulata lenyűgöző, a személyzet rendkívül kedves. A carbonara autentikus, pontosan olyan, mint Rómában. Bravo!"</p>
+        <div class="review-card__author">
+          <img class="review-card__avatar" src="https://i.pravatar.cc/80?img=32" alt="Szabó Tamás"/>
+          <div>
+            <div class="review-card__name">Szabó Tamás</div>
+            <div class="review-card__source">Google ★★★★★</div>
+          </div>
+        </div>
+      </article>
+      <article class="review-card">
+        <div class="review-card__stars">★★★★★</div>
+        <p class="review-card__text">"Évfordulónkat ünnepeltük a Marinában, és mindent megtett a személyzet, hogy különleges legyen az este."</p>
+        <div class="review-card__author">
+          <img class="review-card__avatar" src="https://i.pravatar.cc/80?img=45" alt="Kiss Anita"/>
+          <div>
+            <div class="review-card__name">Kiss Anita</div>
+            <div class="review-card__source">Facebook ★★★★★</div>
+          </div>
+        </div>
+      </article>
+      <article class="review-card">
+        <div class="review-card__stars">★★★★☆</div>
+        <p class="review-card__text">"A desszertek fantasztikusak, a tiramisù mennyei volt."</p>
+        <div class="review-card__author">
+          <img class="review-card__avatar" src="https://i.pravatar.cc/80?img=60" alt="Horváth Gábor"/>
+          <div>
+            <div class="review-card__name">Horváth Gábor</div>
+            <div class="review-card__source">Google ★★★★☆</div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ── GALLERY PREVIEW ── -->
+<section class="section gallery-preview" aria-labelledby="gallery-title">
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;">
+      <div>
+        <div class="label reveal">Pillanatok</div>
+        <h2 class="h-section reveal" id="gallery-title">Hangulat &amp; Ételek</h2>
+      </div>
+      <a href="galeria.html" class="btn btn-outline reveal">Galéria megtekintése →</a>
+    </div>
+    <div class="gallery-preview__grid">
+      <div class="gallery-preview__item reveal">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=80" alt="Étterem belső" loading="lazy"/>
+      </div>
+      <div class="gallery-preview__item reveal" data-delay="80">
+        <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&q=80" alt="Pizza" loading="lazy"/>
+      </div>
+      <div class="gallery-preview__item reveal" data-delay="160">
+        <img src="https://images.unsplash.com/photo-1558030006-450675393462?w=600&q=80" alt="Steak" loading="lazy"/>
+      </div>
+      <div class="gallery-preview__item reveal" data-delay="240">
+        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=80" alt="Desszert" loading="lazy"/>
+      </div>
+      <div class="gallery-preview__item reveal" data-delay="320">
+        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80" alt="Étterem este" loading="lazy"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA BOOKING ── -->
+<section class="section cta-booking" aria-label="Asztfoglalás felhívás">
+  <div class="container">
+    <div class="cta-booking__inner reveal">
+      <div class="label" style="justify-content:center;">Foglaljon most</div>
+      <h2 class="cta-booking__title">Foglaljon asztalt<br/>egy feledhetetlen estére</h2>
+      <p class="cta-booking__subtitle">
+        Különleges alkalom, üzleti ebéd vagy romantikus vacsora — mi gondoskodunk minden részletről.
+      </p>
+      <div class="cta-booking__actions">
+        <a href="foglalas.html" class="btn btn-gold"><span>🗓 Online foglalás</span></a>
+        <a href="tel:+3620123456" class="btn btn-outline">📞 Telefonos foglalás</a>
+      </div>
+      <div class="cta-booking__tel">
+        <span style="font-size:1rem;color:var(--white-dim);">vagy hívjon minket:</span>
+        <a href="tel:+3620123456" style="color:var(--gold);">+36 20 123 456</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand-name">Marina</div>
+        <div class="footer__brand-sub">Pizzeria &amp; Steakhouse</div>
+        <p class="footer__brand-text">
+          Prémium olasz konyha és steakhouse élmény Budapest szívében. Friss alapanyagok, szenvedélyes séfek, feledhetetlen ízek.
+        </p>
+        <div class="footer__social">
+          <a href="#" class="footer__social-link" aria-label="Facebook">f</a>
+          <a href="#" class="footer__social-link" aria-label="Instagram">📷</a>
+          <a href="#" class="footer__social-link" aria-label="TripAdvisor">🌍</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Oldalak</div>
+        <ul class="footer__links">
+          <li><a href="index.html" class="footer__link">Főoldal</a></li>
+          <li><a href="etlap.html" class="footer__link">Étlap</a></li>
+          <li><a href="rolunk.html" class="footer__link">Rólunk</a></li>
+          <li><a href="galeria.html" class="footer__link">Galéria</a></li>
+          <li><a href="foglalas.html" class="footer__link">Foglalás</a></li>
+          <li><a href="kapcsolat.html" class="footer__link">Kapcsolat</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title">Nyitvatartás</div>
+        <div class="footer__info">
+          <div class="footer__info-item"><span class="footer__info-icon">🕐</span><span>H–Cs: 11:00 – 22:00</span></div>
+          <div class="footer__info-item"><span class="footer__info-icon">🕐</span><span>P–Szo: 11:00 – 23:30</span></div>
+          <div class="footer__info-item"><span class="footer__info-icon">🕐</span><span>Vas: 12:00 – 22:00</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Elérhetőség</div>
+        <div class="footer__info">
+          <div class="footer__info-item"><span class="footer__info-icon">📍</span><span>1051 Budapest,<br/>Október 6. utca 14.</span></div>
+          <div class="footer__info-item"><span class="footer__info-icon">📞</span><a href="tel:+3620123456" class="footer__link">+36 20 123 456</a></div>
+          <div class="footer__info-item"><span class="footer__info-icon">✉️</span><a href="mailto:info@marinapizzeria.hu" class="footer__link">info@marinapizzeria.hu</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2025 Marina Pizzeria &amp; Steakhouse. Minden jog fenntartva.</span>
+      <span>Tervezés: Prémium Web Studio</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Asztfoglalás – Marina Pizzeria &amp; Steakhouse. Foglaljon online!"/>
+  <title>Foglalás – Marina Pizzeria &amp; Steakhouse</title>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav class="nav scrolled">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <span class="nav__logo-main">Marina</span>
+        <span class="nav__logo-sub">Pizzeria &amp; Steakhouse</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html" class="nav__link">Főoldal</a></li>
+        <li><a href="etlap.html" class="nav__link">Étlap</a></li>
+        <li><a href="rolunk.html" class="nav__link">Rólunk</a></li>
+        <li><a href="galeria.html" class="nav__link">Galéria</a></li>
+        <li><a href="kapcsolat.html" class="nav__link">Kapcsolat</a></li>
+      </ul>
+      <div class="nav__cta">
+        <a href="foglalas.html" class="btn btn-gold"><span>Foglalás</span></a>
+      </div>
+      <button class="nav__hamburger" aria-label="Menü" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="nav__mobile">
+  <a href="index.html" class="nav__mobile-link">Főoldal</a>
+  <a href="etlap.html" class="nav__mobile-link">Étlap</a>
+  <a href="rolunk.html" class="nav__mobile-link">Rólunk</a>
+  <a href="galeria.html" class="nav__mobile-link">Galéria</a>
+  <a href="foglalas.html" class="nav__mobile-link">Foglalás</a>
+  <a href="kapcsolat.html" class="nav__mobile-link">Kapcsolat</a>
+</div>
+
+<!-- ── PAGE HERO ── -->
+<section class="page-hero">
+  <div class="page-hero__bg">
+    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=85" alt="Foglalás háttér" loading="eager"/>
+  </div>
+  <div class="container">
+    <div class="page-hero__content">
+      <div class="label">Foglalja le asztalát</div>
+      <h1 class="page-hero__title">Foglalás</h1>
+      <p style="color:var(--white-dim);font-size:1.05rem;margin-top:16px;max-width:500px;">
+        Biztosítsa helyét és gondoskodjon arról, hogy estéje feledhetetlen legyen.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ── BOOKING ── -->
+<div class="booking-page">
+  <div class="container">
+    <div class="booking-page__inner">
+
+      <!-- Info Column -->
+      <div class="reveal-left">
+        <div class="label">Tudnivalók</div>
+        <h2 class="h-section" style="margin-bottom:40px;">Foglalási<br/>információk</h2>
+
+        <div class="booking-info__item">
+          <div class="booking-info__icon">📞</div>
+          <div>
+            <div class="booking-info__label">Telefonos foglalás</div>
+            <div class="booking-info__value"><a href="tel:+3620123456" style="color:var(--gold);">+36 20 123 456</a></div>
+          </div>
+        </div>
+        <div class="booking-info__item">
+          <div class="booking-info__icon">✉️</div>
+          <div>
+            <div class="booking-info__label">E-mail</div>
+            <div class="booking-info__value"><a href="mailto:foglalas@marinapizzeria.hu" style="color:var(--gold);">foglalas@marinapizzeria.hu</a></div>
+          </div>
+        </div>
+        <div class="booking-info__item">
+          <div class="booking-info__icon">📍</div>
+          <div>
+            <div class="booking-info__label">Cím</div>
+            <div class="booking-info__value">1051 Budapest, Október 6. utca 14.</div>
+          </div>
+        </div>
+        <div class="booking-info__item">
+          <div class="booking-info__icon">👥</div>
+          <div>
+            <div class="booking-info__label">Nagyobb csoportok</div>
+            <div class="booking-info__value" style="font-size:0.9rem;color:var(--white-dim);">10 főnél nagyobb csoportok esetén kérjük, hívjon minket telefonon vagy írjon emailt.</div>
+          </div>
+        </div>
+
+        <div class="booking-hours">
+          <div class="label">Nyitvatartás</div>
+          <div class="booking-hours-grid">
+            <div class="booking-hour-row">
+              <span class="booking-hour-day">Hétfő – Csütörtök</span>
+              <span class="booking-hour-time">11:00 – 22:00</span>
+            </div>
+            <div class="booking-hour-row">
+              <span class="booking-hour-day">Péntek</span>
+              <span class="booking-hour-time">11:00 – 23:30</span>
+            </div>
+            <div class="booking-hour-row">
+              <span class="booking-hour-day">Szombat</span>
+              <span class="booking-hour-time">11:00 – 23:30</span>
+            </div>
+            <div class="booking-hour-row">
+              <span class="booking-hour-day">Vasárnap</span>
+              <span class="booking-hour-time">12:00 – 22:00</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:36px;padding:24px;background:var(--graphite);border:1px solid var(--border);border-radius:4px;">
+          <div style="font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;">Fontos tudnivaló</div>
+          <p style="font-size:0.85rem;color:var(--white-dim);line-height:1.8;">
+            A foglalás megerősítése e-mailben és SMS-ben történik. Kérjük, a foglalt időpontot legfeljebb 24 órával korábban mondja le, ha nem tud megjelenni. Késői lemondás esetén foglalási díj számítható fel.
+          </p>
+        </div>
+      </div>
+
+      <!-- Form Column -->
+      <div class="reveal-right">
+        <div class="booking-form">
+          <div class="booking-form__title">Asztalfoglalás</div>
+          <div class="booking-form__sub">Töltse ki az alábbi űrlapot és hamarosan visszajelzünk!</div>
+
+          <form id="bookingForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="fname">Keresztnév *</label>
+                <input class="form-input" type="text" id="fname" name="fname" placeholder="pl. Péter" required autocomplete="given-name"/>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="lname">Vezetéknév *</label>
+                <input class="form-input" type="text" id="lname" name="lname" placeholder="pl. Kovács" required autocomplete="family-name"/>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="phone">Telefonszám *</label>
+                <input class="form-input" type="tel" id="phone" name="phone" placeholder="+36 20 123 456" required autocomplete="tel"/>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="email">E-mail *</label>
+                <input class="form-input" type="email" id="email" name="email" placeholder="pelda@email.hu" required autocomplete="email"/>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="date">Dátum *</label>
+                <input class="form-input" type="date" id="date" name="date" required/>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="time">Időpont *</label>
+                <select class="form-select" id="time" name="time" required>
+                  <option value="">Válasszon...</option>
+                  <option>11:00</option>
+                  <option>11:30</option>
+                  <option>12:00</option>
+                  <option>12:30</option>
+                  <option>13:00</option>
+                  <option>13:30</option>
+                  <option>14:00</option>
+                  <option>18:00</option>
+                  <option>18:30</option>
+                  <option>19:00</option>
+                  <option>19:30</option>
+                  <option>20:00</option>
+                  <option>20:30</option>
+                  <option>21:00</option>
+                  <option>21:30</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="guests">Létszám *</label>
+              <select class="form-select" id="guests" name="guests" required>
+                <option value="">Hány fő?</option>
+                <option>1 fő</option>
+                <option>2 fő</option>
+                <option>3 fő</option>
+                <option>4 fő</option>
+                <option>5 fő</option>
+                <option>6 fő</option>
+                <option>7 fő</option>
+                <option>8 fő</option>
+                <option>9 fő</option>
+                <option>10 fő</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="occasion">Alkalom</label>
+              <select class="form-select" id="occasion" name="occasion">
+                <option value="">Válasszon (opcionális)</option>
+                <option>Születésnap</option>
+                <option>Évforduló</option>
+                <option>Üzleti ebéd/vacsora</option>
+                <option>Csoportos étkezés</option>
+                <option>Egyéb különleges alkalom</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="notes">Megjegyzés</label>
+              <textarea class="form-textarea" id="notes" name="notes" placeholder="Különleges kérések, ételérzékenység, asztal elhelyezési kérés..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-gold form-submit">
+              <span>✓ Foglalás elküldése</span>
+            </button>
+          </form>
+
+          <div class="form-success">
+            <div style="font-size:3rem;margin-bottom:16px;">✅</div>
+            <div style="font-family:var(--font-display);font-size:1.8rem;color:var(--white);margin-bottom:8px;">Köszönjük foglalását!</div>
+            <p style="color:var(--white-dim);font-size:0.9rem;line-height:1.7;">
+              Hamarosan e-mailben és SMS-ben visszaigazoljuk foglalását.<br/>
+              Kérdés esetén hívjon minket: <a href="tel:+3620123456" style="color:var(--gold);">+36 20 123 456</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand-name">Marina</div>
+        <div class="footer__brand-sub">Pizzeria &amp; Steakhouse</div>
+        <p class="footer__brand-text">Prémium olasz konyha és steakhouse élmény Budapest szívében.</p>
+      </div>
+      <div>
+        <div class="footer__col-title">Oldalak</div>
+        <ul class="footer__links">
+          <li><a href="index.html" class="footer__link">Főoldal</a></li>
+          <li><a href="etlap.html" class="footer__link">Étlap</a></li>
+          <li><a href="rolunk.html" class="footer__link">Rólunk</a></li>
+          <li><a href="galeria.html" class="footer__link">Galéria</a></li>
+          <li><a href="foglalas.html" class="footer__link">Foglalás</a></li>
+          <li><a href="kapcsolat.html" class="footer__link">Kapcsolat</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title">Nyitvatartás</div>
+        <div class="footer__info">
+          <div class="footer__info-item"><span class="footer__info-icon">🕐</span><span>H–Cs: 11:00 – 22:00</span></div>
+          <div class="footer__info-item"><span class="footer__info-icon">🕐</span><span>P–Szo: 11:00 – 23:30</span></div>
+          <div class="footer__info-item"><span class="footer__info-icon">🕐</span><span>Vas: 12:00 – 22:00</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Elérhetőség</div>
+        <div class="footer__info">
+          <div class="footer__info-item"><span class="footer__info-icon">📍</span><span>1051 Budapest,<br/>Október 6. utca 14.</span></div>
+          <div class="footer__info-item"><span class="footer__info-icon">📞</span><a href="tel:+3620123456" class="footer__link">+36 20 123 456</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2025 Marina Pizzeria &amp; Steakhouse.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
