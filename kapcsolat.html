@@ -2,6 +2,9 @@
 <html lang="hu">
 <head>
   <meta charset="UTF-8"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <meta name="theme-color" content="#0a0a0a"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Kapcsolat – Marina Pizzeria &amp; Steakhouse. Elérhetőség, cím, nyitvatartás, térkép."/>
   <title>Kapcsolat – Marina Pizzeria &amp; Steakhouse</title>
@@ -9,39 +12,45 @@
 </head>
 <body>
 
-<!-- ── NAVIGATION ── -->
-<nav class="nav scrolled">
+<a href="#main" class="skip-link">Ugrás a tartalomhoz</a>
+
+
+<nav class="nav scrolled" role="navigation" aria-label="Főnavigáció">
   <div class="container">
     <div class="nav__inner">
-      <a href="index.html" class="nav__logo">
+      <a href="index.html" class="nav__logo" aria-label="Marina Pizzeria főoldal">
         <span class="nav__logo-main">Marina</span>
         <span class="nav__logo-sub">Pizzeria &amp; Steakhouse</span>
       </a>
-      <ul class="nav__links">
+      <ul class="nav__links" role="list">
         <li><a href="index.html" class="nav__link">Főoldal</a></li>
         <li><a href="etlap.html" class="nav__link">Étlap</a></li>
         <li><a href="rolunk.html" class="nav__link">Rólunk</a></li>
         <li><a href="galeria.html" class="nav__link">Galéria</a></li>
-        <li><a href="kapcsolat.html" class="nav__link active">Kapcsolat</a></li>
+        <li><a href="kapcsolat.html" class="nav__link" aria-current="page">Kapcsolat</a></li>
       </ul>
       <div class="nav__cta">
         <a href="foglalas.html" class="btn btn-gold"><span>Foglalás</span></a>
       </div>
-      <button class="nav__hamburger" aria-label="Menü" aria-expanded="false">
+      <button class="nav__hamburger" aria-label="Menü megnyitása" aria-expanded="false" aria-controls="mobileNav">
         <span></span><span></span><span></span>
       </button>
     </div>
   </div>
 </nav>
-<div class="nav__mobile">
+<nav class="nav__mobile" id="mobileNav" aria-label="Mobilnavigáció">
   <a href="index.html" class="nav__mobile-link">Főoldal</a>
   <a href="etlap.html" class="nav__mobile-link">Étlap</a>
   <a href="rolunk.html" class="nav__mobile-link">Rólunk</a>
   <a href="galeria.html" class="nav__mobile-link">Galéria</a>
   <a href="foglalas.html" class="nav__mobile-link">Foglalás</a>
-  <a href="kapcsolat.html" class="nav__mobile-link">Kapcsolat</a>
-</div>
+  <a href="kapcsolat.html" class="nav__mobile-link" aria-current="page">Kapcsolat</a>
+  <div class="nav__mobile-cta">
+    <a href="foglalas.html" class="btn btn-gold" style="width:100%;justify-content:center;"><span>Asztalt foglalok</span></a>
+  </div>
+</nav>
 
+<main id="main">
 <!-- ── PAGE HERO ── -->
 <section class="page-hero">
   <div class="page-hero__bg">
@@ -221,6 +230,8 @@
   </div>
 </div>
 
+</main>
+
 <!-- ── FOOTER ── -->
 <footer class="footer">
   <div class="container">
@@ -243,7 +254,7 @@
           <li><a href="rolunk.html" class="footer__link">Rólunk</a></li>
           <li><a href="galeria.html" class="footer__link">Galéria</a></li>
           <li><a href="foglalas.html" class="footer__link">Foglalás</a></li>
-          <li><a href="kapcsolat.html" class="footer__link">Kapcsolat</a></li>
+          <li><a href="kapcsolat.html" class="footer__link" aria-current="page">Kapcsolat</a></li>
         </ul>
       </div>
       <div>
@@ -269,6 +280,24 @@
     </div>
   </div>
 </footer>
+
+
+<!-- ── COOKIE BANNER ── -->
+<div class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie tájékoztató">
+  <div class="container">
+    <div class="cookie-banner__inner">
+      <div class="cookie-banner__icon" aria-hidden="true">🍪</div>
+      <div class="cookie-banner__text">
+        <div class="cookie-banner__title">Sütiket (cookie-kat) használunk</div>
+        <div class="cookie-banner__desc">Weboldalunk alapvető működéshez szükséges és analitikai sütiket használ. Az „Elfogadom" gombra kattintva hozzájárul a sütik használatához. Bővebb info: <a href="#">adatvédelmi tájékoztató</a>.</div>
+      </div>
+      <div class="cookie-banner__actions">
+        <button class="cookie-btn-accept">✓ Elfogadom</button>
+        <button class="cookie-btn-decline">Elutasítom</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script src="assets/js/main.js"></script>
 </body>
