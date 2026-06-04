@@ -1,303 +1,139 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-  <meta charset="UTF-8"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <meta name="theme-color" content="#0a0a0a"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Rólunk – Marina Pizzeria &amp; Steakhouse. Ismerd meg történetünket, csapatunkat és értékeinket."/>
-  <title>Rólunk – Marina Pizzeria &amp; Steakhouse</title>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Rólunk – Marina Pizzéria & Steakhouse Mosonmagyaróvár. Ismerd meg történetünket, csapatunkat és értékeinket."/>
+  <meta name="theme-color" content="#FAFAF8"/>
+  <title>Rólunk – Marina Pizzéria &amp; Steakhouse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link rel="stylesheet" href="assets/css/style.css"/>
 </head>
 <body>
-
 <a href="#main" class="skip-link">Ugrás a tartalomhoz</a>
-
-
 <nav class="nav scrolled" role="navigation" aria-label="Főnavigáció">
   <div class="container"><div class="nav__inner">
-    <a href="index.html" class="nav__logo" aria-label="Marina főoldal">
-      <span class="nav__logo-main">Marina</span>
-      <span class="nav__logo-sub">Pizzeria &amp; Steakhouse</span>
-    </a>
+    <a href="index.html" class="nav__logo"><span class="nav__logo-main">Marina</span><span class="nav__logo-sub">Pizzéria &amp; Steakhouse</span></a>
     <ul class="nav__links" role="list">
       <li><a href="index.html" class="nav__link" data-i18n="nav_home">Főoldal</a></li>
       <li><a href="etlap.html" class="nav__link" data-i18n="nav_menu">Étlap</a></li>
-      <li><a href="rolunk.html" class="nav__link" data-i18n="nav_about">Rólunk</a></li>
+      <li><a href="rolunk.html" class="nav__link active" aria-current="page" data-i18n="nav_about">Rólunk</a></li>
       <li><a href="galeria.html" class="nav__link" data-i18n="nav_gallery">Galéria</a></li>
       <li><a href="kapcsolat.html" class="nav__link" data-i18n="nav_contact">Kapcsolat</a></li>
     </ul>
-    <div class="nav__cta">
-      <div class="lang-switcher" role="group" aria-label="Nyelvválasztó">
-        <button class="lang-btn active" data-lang="hu">HU</button>
-        <button class="lang-btn" data-lang="en">EN</button>
-        <button class="lang-btn" data-lang="de">DE</button>
-      </div>
-      <a href="tel:+3620123456" class="btn btn-gold"><span data-i18n="nav_book">Foglalás</span></a>
-    </div>
-    <button class="nav__hamburger" aria-label="Menü megnyitása" aria-expanded="false" aria-controls="mobileNav">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav__cta"><div class="lang-switcher" role="group"><button class="lang-btn active" data-lang="hu">HU</button><button class="lang-btn" data-lang="en">EN</button><button class="lang-btn" data-lang="de">DE</button></div><a href="tel:+36962031124" class="btn btn-gold"><span data-i18n="nav_book">Foglalás</span></a></div>
+    <button class="nav__hamburger" aria-label="Menü" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
   </div></div>
 </nav>
-<nav class="nav__mobile" id="mobileNav" aria-label="Mobilnavigáció">
-  <a href="index.html" class="nav__mobile-link" data-i18n="nav_home">Főoldal</a>
-  <a href="etlap.html" class="nav__mobile-link" data-i18n="nav_menu">Étlap</a>
-  <a href="rolunk.html" class="nav__mobile-link" data-i18n="nav_about">Rólunk</a>
-  <a href="galeria.html" class="nav__mobile-link" data-i18n="nav_gallery">Galéria</a>
-  <a href="kapcsolat.html" class="nav__mobile-link" data-i18n="nav_contact">Kapcsolat</a>
-  <a href="tel:+3620123456" class="btn btn-gold" style="margin-top:24px;justify-content:center;" data-i18n="nav_book">Foglalás</a>
-  <div class="lang-switcher" style="margin-top:24px;" role="group">
-    <button class="lang-btn active" data-lang="hu">HU</button>
-    <button class="lang-btn" data-lang="en">EN</button>
-    <button class="lang-btn" data-lang="de">DE</button>
-  </div>
+<nav class="nav__mobile" id="mobileNav">
+  <a href="index.html" class="nav__mobile-link">Főoldal</a><a href="etlap.html" class="nav__mobile-link">Étlap</a><a href="rolunk.html" class="nav__mobile-link">Rólunk</a><a href="galeria.html" class="nav__mobile-link">Galéria</a><a href="kapcsolat.html" class="nav__mobile-link">Kapcsolat</a>
+  <a href="tel:+36962031124" class="btn btn-gold" style="margin-top:24px;justify-content:center;">📞 Foglalás</a>
+  <div class="lang-switcher" style="margin-top:24px;"><button class="lang-btn active" data-lang="hu">HU</button><button class="lang-btn" data-lang="en">EN</button><button class="lang-btn" data-lang="de">DE</button></div>
 </nav>
 
 <main id="main">
-<!-- ── PAGE HERO ── -->
 <section class="page-hero">
-  <div class="page-hero__bg">
-    <img src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=1600&q=85" alt="Étterem belső" loading="eager"/>
-  </div>
-  <div class="container">
-    <div class="page-hero__content">
-      <div class="label">A mi történetünk</div>
-      <h1 class="page-hero__title">Rólunk</h1>
-      <p style="color:var(--white-dim);font-size:1.05rem;margin-top:16px;max-width:500px;">
-        Szenvedély, minőség és tradíció — ez a Marina Pizzeria &amp; Steakhouse.
-      </p>
-    </div>
-  </div>
+  <div class="page-hero__bg"><img src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=1600&q=85" alt="" width="1600" height="900" loading="eager"/></div>
+  <div class="container"><div class="page-hero__content">
+    <div class="label" data-i18n="ab_story_l">Hogyan kezdődött</div>
+    <h1 class="page-hero__title" data-i18n="ab_story_t">Rólunk</h1>
+    <p class="page-hero__sub">2011 óta hozzuk el vendégeinknek a különböző nemzetek konyháinak remekeit.</p>
+  </div></div>
 </section>
 
-<!-- ── STORY ── -->
 <section class="section about-story">
   <div class="container">
     <div class="about-story__inner">
       <div>
-        <div class="label reveal">Hogyan kezdődött</div>
-        <h2 class="h-section reveal">Egy álomból<br/>valóság lett</h2>
-        <p class="reveal" style="color:var(--white-dim);margin-top:24px;line-height:1.9;font-size:1rem;" data-delay="100">
-          A Marina Pizzeria &amp; Steakhouse 2015-ben nyitotta meg kapuit Budapest belvárosában. Alapítóink, a Varga família, hosszú évek olaszországi tapasztalatával és mélységes szerelemmel az olasz gasztronómia iránt hozták életre azt a helyet, amelyre mindig is álmodtak.
-        </p>
-        <p class="reveal" style="color:var(--white-dim);margin-top:16px;line-height:1.9;font-size:1rem;" data-delay="180">
-          Az étterem neve nem véletlenül kapta a „Marina" nevet — ez utalás a nápolyi tengerpartra, ahol az alapítók először kóstolták azokat az ízeket, amelyek örökre megváltoztatták életüket. Az azóta eltelt évek alatt a Marina egy valódi intézménnyé vált Budapest gasztronómiai térképén.
-        </p>
-        <div class="about-timeline reveal" data-delay="250">
-          <div class="timeline-item">
-            <div class="timeline-dot">15</div>
-            <div class="timeline-content">
-              <div class="timeline-year">2015</div>
-              <div class="timeline-text">Megnyílik a Marina Pizzeria első helyszíne 40 férőhellyel, fatüzeléses pizzakemencével.</div>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot">17</div>
-            <div class="timeline-content">
-              <div class="timeline-year">2017</div>
-              <div class="timeline-text">Bővítés — a Steakhouse részleg megnyitása, Marco Ferretti séf csatlakozása a csapathoz.</div>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot">19</div>
-            <div class="timeline-content">
-              <div class="timeline-year">2019</div>
-              <div class="timeline-text">TripAdvisor „Travellers' Choice" díj, 150 férőhelyesre bővítés, borbár megnyitása.</div>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot">24</div>
-            <div class="timeline-content">
-              <div class="timeline-year">2024</div>
-              <div class="timeline-text">Teljes belső felújítás, prémium étkezőtér kialakítása, chef's table bevezetése.</div>
-            </div>
-          </div>
+        <div class="label reveal" data-i18n="ab_story_l">Hogyan kezdődött</div>
+        <h2 class="h-section reveal" data-delay="80" data-i18n="ab_story_t">Egy álomból valóság lett</h2>
+        <p class="reveal" style="color:var(--ink-dim);margin-top:18px;line-height:1.9;" data-delay="140">Üdvözöljük Önöket a Marina Pizzéria &amp; Steakhouse-ban! Dőljön kényelmesen hátra és élvezze kellemes környezetben a különböző mediterrán konyhák ételeit. Ha nincs ideje élvezni a mediterrán hangulatot, ételeinket kérésére házhozszállítjuk.</p>
+        <p class="reveal" style="color:var(--ink-dim);margin-top:14px;line-height:1.9;" data-delay="200">A Marina Pizzéria és Steakhouse <strong style="color:var(--ink);">2011 augusztusában</strong> nyitotta meg kapuit. Célunk, hogy a különböző nemzetek konyháinak remekeit elhozzuk vendégeinknek. A kiváló olasz pizzák, tészták mellett helyet kaptak thai és wok ételek, saláták, halételek is.</p>
+        <p class="reveal" style="color:var(--ink-dim);margin-top:14px;line-height:1.9;" data-delay="260">Éttermünkben kiemelt helyen szerepelnek a <strong style="color:var(--ink);">steak és grill ételek</strong>. A régióban egyedülálló steakkínálattal rendelkezünk. Chefjeink jól képzett, több generációból álló csapat. Felszolgálóink vendégközpontú gondolkodásúak, udvarias szakemberek.</p>
+        <div class="about-timeline">
+          <div class="timeline-item"><div class="timeline-dot">11</div><div><div class="timeline-year">2011</div><div class="timeline-text">A Marina Pizzéria megnyitja kapuit Mosonmagyaróváron — pizzák, tészták, mediterrán konyha.</div></div></div>
+          <div class="timeline-item"><div class="timeline-dot">13</div><div><div class="timeline-year">2013</div><div class="timeline-text">A Steakhouse részleg bevezetése — a régióban egyedülálló steakkínálat kialakítása.</div></div></div>
+          <div class="timeline-item"><div class="timeline-dot">15</div><div><div class="timeline-year">2015</div><div class="timeline-text">Weboldalunk elindítása, házhozszállítás és elviteli rendelés bevezetése.</div></div></div>
+          <div class="timeline-item"><div class="timeline-dot">24</div><div><div class="timeline-year">2024</div><div class="timeline-text">Folyamatos fejlesztés — új ételek, megújult belső terek, prémium italválaszték.</div></div></div>
+        </div>
+        <div style="margin-top:28px;padding:22px 26px;border-left:2px solid var(--gold);background:var(--surface);border-radius:0 var(--radius) var(--radius) 0;">
+          <div style="font-family:var(--font-display);font-size:1.3rem;color:var(--gold);font-style:italic;">"Jó ételt az étvágyhoz!"</div>
+          <div style="font-size:0.84rem;color:var(--ink-dim);margin-top:6px;">— Marina Pizzéria &amp; Steakhouse csapata</div>
         </div>
       </div>
       <div class="reveal-right">
-        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=85" alt="Marina étterem hangulat" loading="lazy" style="width:100%;border-radius:4px;aspect-ratio:4/5;object-fit:cover;"/>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;">
-          <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=80" alt="Ételfotó" loading="lazy" style="width:100%;border-radius:4px;aspect-ratio:4/3;object-fit:cover;"/>
-          <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400&q=80" alt="Étterem este" loading="lazy" style="width:100%;border-radius:4px;aspect-ratio:4/3;object-fit:cover;"/>
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=85" alt="Marina étterem" width="800" height="1000" loading="lazy" style="width:100%;border-radius:var(--radius);box-shadow:var(--shadow-lg);aspect-ratio:4/5;object-fit:cover;"/>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px;">
+          <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=80" alt="Pizza" width="400" height="300" loading="lazy" style="width:100%;border-radius:var(--radius);aspect-ratio:4/3;object-fit:cover;box-shadow:var(--shadow);"/>
+          <img src="https://images.unsplash.com/photo-1558030006-450675393462?w=400&q=80" alt="Steak" width="400" height="300" loading="lazy" style="width:100%;border-radius:var(--radius);aspect-ratio:4/3;object-fit:cover;box-shadow:var(--shadow);"/>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── VALUES ── -->
 <section class="section about-values">
   <div class="container">
-    <div style="text-align:center;max-width:600px;margin:0 auto;">
-      <div class="label reveal" style="justify-content:center;">Ami számunkra fontos</div>
-      <h2 class="h-section reveal">Értékeink és küldetésünk</h2>
-      <p class="reveal" style="color:var(--white-dim);margin-top:16px;line-height:1.8;" data-delay="100">
-        Minden döntésünk három alapelven nyugszik: minőség, autentikusság és vendégszeretet. Ezek nem csupán szavak — ezek a Marina DNS-e.
-      </p>
+    <div style="text-align:center;max-width:580px;margin:0 auto;">
+      <div class="label reveal" style="justify-content:center;" data-i18n="ab_val_l">Ami számunkra fontos</div>
+      <h2 class="h-section reveal" data-i18n="ab_val_t">Értékeink és küldetésünk</h2>
     </div>
     <div class="about-values__grid">
-      <div class="value-card reveal" data-delay="0">
-        <div class="value-card__icon">🌿</div>
-        <div class="value-card__title">Prémium alapanyagok</div>
-        <div class="value-card__text">Naponta érkező friss zöldségek helyi gazdálkodóktól, autentikus olasz import termékek — DOP és IGP minősítésű sajtoktól a San Marzano paradicsomig.</div>
-      </div>
-      <div class="value-card reveal" data-delay="100">
-        <div class="value-card__icon">👨‍🍳</div>
-        <div class="value-card__title">Kézműves konyha</div>
-        <div class="value-card__text">Séfjeink évtizedes tapasztalattal rendelkeznek olasz és nemzetközi konyhákban. Minden fogást kézzel, gondosan, szenvedélyesen készítünk el.</div>
-      </div>
-      <div class="value-card reveal" data-delay="200">
-        <div class="value-card__icon">🏡</div>
-        <div class="value-card__title">Vendégszeretet</div>
-        <div class="value-card__text">Az olasz „ospitalità" szellemében fogadjuk vendégeinket. Nálunk minden vendég különleges, minden látogatás emlékezetes.</div>
-      </div>
-      <div class="value-card reveal" data-delay="300">
-        <div class="value-card__icon">🔥</div>
-        <div class="value-card__title">Hagyomány és innováció</div>
-        <div class="value-card__text">Tiszteljük a klasszikus recepteket, de nyitottak vagyunk az újdonságokra. Étlapunkon tradíció és kreativitás találkozik.</div>
-      </div>
-      <div class="value-card reveal" data-delay="400">
-        <div class="value-card__icon">🌍</div>
-        <div class="value-card__title">Fenntarthatóság</div>
-        <div class="value-card__text">Tudatos döntéseket hozunk: helyi termelőkkel dolgozunk, minimalizáljuk a pazarlást és környezetbarát csomagolást használunk.</div>
-      </div>
-      <div class="value-card reveal" data-delay="500">
-        <div class="value-card__icon">🍷</div>
-        <div class="value-card__title">Borkultúra</div>
-        <div class="value-card__text">Sommelier-ünk gondosan összeállított borlapunk garantálja, hogy minden fogáshoz megtalálja a tökéletes kísérőt.</div>
-      </div>
+      <div class="value-card reveal" data-delay="0"><div class="value-card__icon">🍕</div><div class="value-card__title">Autentikus ízek</div><div class="value-card__text">Olasz pizzáktól thai wok ételekig — sokszínű, autentikus konyhaművészet egy helyen.</div></div>
+      <div class="value-card reveal" data-delay="100"><div class="value-card__icon">🥩</div><div class="value-card__title">Prémium steakkínálat</div><div class="value-card__text">A régióban egyedülálló steakkínálattal rendelkezünk, jól képzett séfekkel.</div></div>
+      <div class="value-card reveal" data-delay="200"><div class="value-card__icon">🌿</div><div class="value-card__title">Friss alapanyagok</div><div class="value-card__text">Ételeinket kiváló alapanyagokból, mindig frissen készítjük.</div></div>
+      <div class="value-card reveal" data-delay="300"><div class="value-card__icon">😊</div><div class="value-card__title">Vendégközpontúság</div><div class="value-card__text">Felszolgálóink vendégközpontú gondolkodásúak, udvarias szakemberek.</div></div>
+      <div class="value-card reveal" data-delay="400"><div class="value-card__icon">🎉</div><div class="value-card__title">Rendezvények</div><div class="value-card__text">Vállaljuk baráti összejövetelek, osztálytalálkozók, céges rendezvények, üzleti ebédek lebonyolítását.</div></div>
+      <div class="value-card reveal" data-delay="500"><div class="value-card__icon">🚗</div><div class="value-card__title">Házhozszállítás</div><div class="value-card__text">Nincs ideje? Ételeinket kérésére házhozszállítjuk — frissen, gyorsan.</div></div>
     </div>
   </div>
 </section>
 
-<!-- ── TEAM ── -->
-<section class="section about-team">
+<section class="section about-team" style="background:var(--bg-2);">
   <div class="container">
-    <div class="label reveal">Csapatunk</div>
-    <h2 class="h-section reveal">Az emberek mögött</h2>
-    <p class="reveal" style="color:var(--white-dim);margin-top:16px;max-width:580px;line-height:1.8;" data-delay="100">
-      A Marina sikerének titka a szenvedélyes, elhivatott csapat — emberek, akik szívükkel dolgoznak.
-    </p>
+    <div class="label reveal" data-i18n="ab_team_l">Csapatunk</div>
+    <h2 class="h-section reveal" data-i18n="ab_team_t">Az emberek mögött</h2>
+    <p class="reveal" style="color:var(--ink-dim);margin-top:14px;max-width:560px;line-height:1.8;" data-delay="100">Chefjeink jól képzett, több generációból álló csapat — szenvedélyük az ételkészítés és a vendégek elkápráztatása.</p>
     <div class="about-team__grid">
-      <div class="team-card reveal" data-delay="0">
-        <img class="team-card__img" src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=500&q=80" alt="Marco Ferretti" loading="lazy"/>
-        <div class="team-card__body">
-          <div class="team-card__name">Marco Ferretti</div>
-          <div class="team-card__role">Executive Chef</div>
-          <div class="team-card__bio">Nápolyi születésű séf, 20 éves tapasztalattal Milánóból, Rómából és Londonból. A Marina kulináris identitásának megteremtője.</div>
-        </div>
-      </div>
-      <div class="team-card reveal" data-delay="120">
-        <img class="team-card__img" src="https://images.unsplash.com/photo-1583394293214-d5f06a39b098?w=500&q=80" alt="Varga Péter" loading="lazy"/>
-        <div class="team-card__body">
-          <div class="team-card__name">Varga Péter</div>
-          <div class="team-card__role">Alapító &amp; Vezető</div>
-          <div class="team-card__bio">A Marina álmodója és megteremtője. Olaszországi évei alatt szerelembe esett az autentikus olasz konyhával — ezt az élményt hozta haza.</div>
-        </div>
-      </div>
-      <div class="team-card reveal" data-delay="240">
-        <img class="team-card__img" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&q=80" alt="Sofia Romani" loading="lazy"/>
-        <div class="team-card__body">
-          <div class="team-card__name">Sofia Romani</div>
-          <div class="team-card__role">Sommelier &amp; Italmester</div>
-          <div class="team-card__bio">Firenzei születésű sommelier, WSET Level 4 minősítéssel. Ő felelős a Marina 180 tételes borlapjáért.</div>
-        </div>
-      </div>
+      <div class="team-card reveal" data-delay="0"><img class="team-card__img" src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=500&q=80" alt="Séf" width="500" height="667" loading="lazy"/><div class="team-card__body"><div class="team-card__name">Séf Csapat</div><div class="team-card__role">Konyhafőnökök</div><div class="team-card__bio">Több generációból álló, jól képzett séfcsapat. Szenvedélyük az autentikus ételkészítés és az új ízek felfedezése.</div></div></div>
+      <div class="team-card reveal" data-delay="120"><img class="team-card__img" src="https://images.unsplash.com/photo-1583394293214-d5f06a39b098?w=500&q=80" alt="Felszolgálók" width="500" height="667" loading="lazy"/><div class="team-card__body"><div class="team-card__name">Felszolgáló Csapat</div><div class="team-card__role">Vendégfogadás</div><div class="team-card__bio">Vendégközpontú gondolkodásúak, udvarias szakemberek — minden vendéget különlegesnek éreztetnek.</div></div></div>
+      <div class="team-card reveal" data-delay="240"><img class="team-card__img" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&q=80" alt="Csapat" width="500" height="667" loading="lazy"/><div class="team-card__body"><div class="team-card__name">HB-Gourmet Kft.</div><div class="team-card__role">Tulajdonos &amp; Üzemeltetés</div><div class="team-card__bio">2011 óta elkötelezetten a kiváló gasztronómia iránt — folyamatosan fejlesztjük kínálatunkat és éttermi tereinket.</div></div></div>
     </div>
   </div>
 </section>
 
-<!-- ── CTA ── -->
-<section class="section cta-booking">
+<!-- Szolgáltatások -->
+<section class="section" style="background:var(--bg);">
   <div class="container">
-    <div class="cta-booking__inner reveal">
-      <div class="label" style="justify-content:center;">Ismerjen meg minket személyesen</div>
-      <h2 class="cta-booking__title">Látogasson el hozzánk!</h2>
-      <p class="cta-booking__subtitle">Foglaljon asztalt és tapasztalja meg személyesen, miről szól a Marina.</p>
-      <div class="cta-booking__actions">
-        <a href="foglalas.html" class="btn btn-gold"><span>🗓 Asztalt foglalok</span></a>
-        <a href="etlap.html" class="btn btn-outline">Étlap megtekintése</a>
-      </div>
+    <div class="label reveal">Szolgáltatásaink</div>
+    <h2 class="h-section reveal">Mit vállalunk?</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;margin-top:48px;">
+      <div class="value-card reveal" data-delay="0"><div class="value-card__icon">🏕️</div><div class="value-card__title">Kitelepülés</div><div class="value-card__text">Rendezvények külső helyszínen, kitelepüléssel.</div></div>
+      <div class="value-card reveal" data-delay="80"><div class="value-card__icon">🎓</div><div class="value-card__title">Ballagások</div><div class="value-card__text">Ballagási ebédek és vacsorák lebonyolítása.</div></div>
+      <div class="value-card reveal" data-delay="160"><div class="value-card__icon">👨‍👩‍👧‍👦</div><div class="value-card__title">Családi rendezvények</div><div class="value-card__text">Baráti és családi összejövetelek szervezése és lebonyolítása.</div></div>
+      <div class="value-card reveal" data-delay="240"><div class="value-card__icon">💼</div><div class="value-card__title">Üzleti étkezés</div><div class="value-card__text">Üzleti ebéd és vacsora professzionális környezetben.</div></div>
+      <div class="value-card reveal" data-delay="320"><div class="value-card__icon">🍷</div><div class="value-card__title">Bor- és pálinkakóstoló</div><div class="value-card__text">Különleges bor- és pálinkakóstoló alkalmak szervezése.</div></div>
+      <div class="value-card reveal" data-delay="400"><div class="value-card__icon">🏠</div><div class="value-card__title">Zárt étterem</div><div class="value-card__text">Zárt étterem 50 főig · Hűthető-fűthető terasz 60 főig.</div></div>
+    </div>
+    <div style="text-align:center;margin-top:40px;" class="reveal">
+      <a href="tel:+36962031124" class="btn btn-gold">📞 Érdeklődjön most</a>
     </div>
   </div>
 </section>
 
 </main>
 
-<!-- ── FOOTER ── -->
-<footer class="footer">
+<footer class="footer" role="contentinfo">
   <div class="container">
     <div class="footer__grid">
-      <div>
-        <div class="footer__brand-name">Marina</div>
-        <div class="footer__brand-sub">Pizzeria &amp; Steakhouse</div>
-        <p class="footer__brand-text">Prémium olasz konyha és steakhouse élmény Budapest szívében.</p>
-      </div>
-      <div>
-        <div class="footer__col-title">Oldalak</div>
-        <ul class="footer__links">
-          <li><a href="index.html" class="footer__link">Főoldal</a></li>
-          <li><a href="etlap.html" class="footer__link">Étlap</a></li>
-          <li><a href="rolunk.html" class="footer__link" aria-current="page">Rólunk</a></li>
-          <li><a href="galeria.html" class="footer__link">Galéria</a></li>
-          <li><a href="foglalas.html" class="footer__link">Foglalás</a></li>
-          <li><a href="kapcsolat.html" class="footer__link">Kapcsolat</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer__col-title">Nyitvatartás</div>
-        <div class="footer__info">
-          <div class="footer__info-item"><span class="footer__info-icon">🕐</span><span>H–Cs: 11:00 – 22:00</span></div>
-          <div class="footer__info-item"><span class="footer__info-icon">🕐</span><span>P–Szo: 11:00 – 23:30</span></div>
-          <div class="footer__info-item"><span class="footer__info-icon">🕐</span><span>Vas: 12:00 – 22:00</span></div>
-        </div>
-      </div>
-      <div>
-        <div class="footer__col-title">Elérhetőség</div>
-        <div class="footer__info">
-          <div class="footer__info-item"><span class="footer__info-icon">📍</span><span>1051 Budapest,<br/>Október 6. utca 14.</span></div>
-          <div class="footer__info-item"><span class="footer__info-icon">📞</span><a href="tel:+3620123456" class="footer__link">+36 20 123 456</a></div>
-        </div>
-      </div>
+      <div><div class="footer__brand-name">Marina</div><div class="footer__brand-sub">Pizzéria &amp; Steakhouse</div><p class="footer__brand-text" data-i18n="foot_about">Prémium olasz konyha és steakhouse — 2011 óta Mosonmagyaróváron.</p><div class="footer__social"><a href="https://www.facebook.com/share/1BSnPin1i3/?mibextid=wwXIfr" class="footer__social-link" target="_blank" rel="noopener" style="color:#1877F2;border-color:rgba(24,119,242,0.35);">f</a></div></div>
+      <div><div class="footer__col-title">Oldalak</div><ul class="footer__links"><li><a href="index.html" class="footer__link">Főoldal</a></li><li><a href="etlap.html" class="footer__link">Étlap</a></li><li><a href="rolunk.html" class="footer__link">Rólunk</a></li><li><a href="galeria.html" class="footer__link">Galéria</a></li><li><a href="kapcsolat.html" class="footer__link">Kapcsolat</a></li></ul></div>
+      <div><div class="footer__col-title">Nyitvatartás</div><div class="footer__info"><div class="footer__info-item"><span class="footer__info-icon">🕐</span><span>H–Cs: 11:00 – 21:00</span></div><div class="footer__info-item"><span class="footer__info-icon">🕐</span><span>P–Szo: 11:00 – 22:00</span></div><div class="footer__info-item"><span class="footer__info-icon">🕐</span><span>Vas: 11:00 – 21:00</span></div></div></div>
+      <div><div class="footer__col-title">Elérhetőség</div><div class="footer__info"><div class="footer__info-item"><span class="footer__info-icon">📍</span><span>Mosonmagyaróvár,<br/>Királyhidai u. 50.</span></div><div class="footer__info-item"><span class="footer__info-icon">📞</span><a href="tel:+36962031124" class="footer__link">+36 96 203 124</a></div><div class="footer__info-item"><span class="footer__info-icon">✉️</span><a href="mailto:info@marinapizzeria.hu" class="footer__link">info@marinapizzeria.hu</a></div></div></div>
     </div>
-    <div class="footer__bottom">
-      <span>© 2025 Marina Pizzeria &amp; Steakhouse.</span>
-    </div>
+    <div class="footer__bottom"><span>© 2015–2025 Marina Pizzéria &amp; Steakhouse.</span><span>18 éven aluliakat szeszes itallal nem szolgálunk ki.</span></div>
   </div>
 </footer>
-
-
-      <div class="cookie-banner__text">
-        <div class="cookie-banner__title">Sütiket (cookie-kat) használunk</div>
-        <div class="cookie-banner__desc">Weboldalunk alapvető működéshez szükséges és analitikai sütiket használ. Az „Elfogadom" gombra kattintva hozzájárul a sütik használatához. Bővebb info: <a href="#">adatvédelmi tájékoztató</a>.</div>
-      </div>
-      <div class="cookie-banner__actions">
-        <button class="cookie-btn-accept">✓ Elfogadom</button>
-        <button class="cookie-btn-decline">Elutasítom</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- COOKIE -->
-<div class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie tájékoztató">
-  <div class="container">
-    <div class="cookie-banner__inner">
-      <div class="cookie-banner__icon" aria-hidden="true">🍪</div>
-      <div class="cookie-banner__text">
-        <div class="cookie-banner__title" data-i18n="ck_title">Sütiket (cookie-kat) használunk</div>
-        <div class="cookie-banner__desc" data-i18n="ck_desc">Weboldalunk alapvető működéshez szükséges és analitikai sütiket használ.</div>
-      </div>
-      <div class="cookie-banner__actions">
-        <button class="cookie-btn-accept" data-i18n="ck_accept">✓ Elfogadom</button>
-        <button class="cookie-btn-decline" data-i18n="ck_decline">Elutasítom</button>
-      </div>
-    </div>
-  </div>
-</div>
+<div class="cookie-banner" role="dialog" aria-live="polite"><div class="container"><div class="cookie-banner__inner"><div class="cookie-banner__icon">🍪</div><div class="cookie-banner__text"><div class="cookie-banner__title" data-i18n="ck_title">Sütiket használunk</div><div class="cookie-banner__desc" data-i18n="ck_desc">Weboldalunk sütiket használ.</div></div><div class="cookie-banner__actions"><button class="cookie-btn-accept" data-i18n="ck_accept">✓ Elfogadom</button><button class="cookie-btn-decline" data-i18n="ck_decline">Elutasítom</button></div></div></div></div>
 <script src="assets/js/main.js"></script>
 </body>
 </html>
