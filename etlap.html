@@ -16,37 +16,42 @@
 
 
 <nav class="nav scrolled" role="navigation" aria-label="Főnavigáció">
-  <div class="container">
-    <div class="nav__inner">
-      <a href="index.html" class="nav__logo" aria-label="Marina Pizzeria főoldal">
-        <span class="nav__logo-main">Marina</span>
-        <span class="nav__logo-sub">Pizzeria &amp; Steakhouse</span>
-      </a>
-      <ul class="nav__links" role="list">
-        <li><a href="index.html" class="nav__link">Főoldal</a></li>
-        <li><a href="etlap.html" class="nav__link" aria-current="page">Étlap</a></li>
-        <li><a href="rolunk.html" class="nav__link">Rólunk</a></li>
-        <li><a href="galeria.html" class="nav__link">Galéria</a></li>
-        <li><a href="kapcsolat.html" class="nav__link">Kapcsolat</a></li>
-      </ul>
-      <div class="nav__cta">
-        <a href="foglalas.html" class="btn btn-gold"><span>Foglalás</span></a>
+  <div class="container"><div class="nav__inner">
+    <a href="index.html" class="nav__logo" aria-label="Marina főoldal">
+      <span class="nav__logo-main">Marina</span>
+      <span class="nav__logo-sub">Pizzeria &amp; Steakhouse</span>
+    </a>
+    <ul class="nav__links" role="list">
+      <li><a href="index.html" class="nav__link" data-i18n="nav_home">Főoldal</a></li>
+      <li><a href="etlap.html" class="nav__link" data-i18n="nav_menu">Étlap</a></li>
+      <li><a href="rolunk.html" class="nav__link" data-i18n="nav_about">Rólunk</a></li>
+      <li><a href="galeria.html" class="nav__link" data-i18n="nav_gallery">Galéria</a></li>
+      <li><a href="kapcsolat.html" class="nav__link" data-i18n="nav_contact">Kapcsolat</a></li>
+    </ul>
+    <div class="nav__cta">
+      <div class="lang-switcher" role="group" aria-label="Nyelvválasztó">
+        <button class="lang-btn active" data-lang="hu">HU</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="de">DE</button>
       </div>
-      <button class="nav__hamburger" aria-label="Menü megnyitása" aria-expanded="false" aria-controls="mobileNav">
-        <span></span><span></span><span></span>
-      </button>
+      <a href="tel:+3620123456" class="btn btn-gold"><span data-i18n="nav_book">Foglalás</span></a>
     </div>
-  </div>
+    <button class="nav__hamburger" aria-label="Menü megnyitása" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div></div>
 </nav>
 <nav class="nav__mobile" id="mobileNav" aria-label="Mobilnavigáció">
-  <a href="index.html" class="nav__mobile-link">Főoldal</a>
-  <a href="etlap.html" class="nav__mobile-link" aria-current="page">Étlap</a>
-  <a href="rolunk.html" class="nav__mobile-link">Rólunk</a>
-  <a href="galeria.html" class="nav__mobile-link">Galéria</a>
-  <a href="foglalas.html" class="nav__mobile-link">Foglalás</a>
-  <a href="kapcsolat.html" class="nav__mobile-link">Kapcsolat</a>
-  <div class="nav__mobile-cta">
-    <a href="foglalas.html" class="btn btn-gold" style="width:100%;justify-content:center;"><span>Asztalt foglalok</span></a>
+  <a href="index.html" class="nav__mobile-link" data-i18n="nav_home">Főoldal</a>
+  <a href="etlap.html" class="nav__mobile-link" data-i18n="nav_menu">Étlap</a>
+  <a href="rolunk.html" class="nav__mobile-link" data-i18n="nav_about">Rólunk</a>
+  <a href="galeria.html" class="nav__mobile-link" data-i18n="nav_gallery">Galéria</a>
+  <a href="kapcsolat.html" class="nav__mobile-link" data-i18n="nav_contact">Kapcsolat</a>
+  <a href="tel:+3620123456" class="btn btn-gold" style="margin-top:24px;justify-content:center;" data-i18n="nav_book">Foglalás</a>
+  <div class="lang-switcher" style="margin-top:24px;" role="group">
+    <button class="lang-btn active" data-lang="hu">HU</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+    <button class="lang-btn" data-lang="de">DE</button>
   </div>
 </nav>
 
@@ -457,9 +462,10 @@
         <div class="footer__brand-name">Marina</div>
         <div class="footer__brand-sub">Pizzeria &amp; Steakhouse</div>
         <p class="footer__brand-text">Prémium olasz konyha és steakhouse élmény Budapest szívében.</p>
-        <div class="footer__social">
-          <a href="#" class="footer__social-link" aria-label="Facebook">f</a>
+                <div class="footer__social">
+          <a href="https://www.facebook.com/share/1BSnPin1i3/?mibextid=wwXIfr" class="footer__social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer" style="color:#1877F2;border-color:rgba(24,119,242,0.35);">f</a>
           <a href="#" class="footer__social-link" aria-label="Instagram">📷</a>
+          <a href="#" class="footer__social-link" aria-label="TripAdvisor">🌍</a>
         </div>
       </div>
       <div>
@@ -496,11 +502,6 @@
 </footer>
 
 
-<!-- ── COOKIE BANNER ── -->
-<div class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie tájékoztató">
-  <div class="container">
-    <div class="cookie-banner__inner">
-      <div class="cookie-banner__icon" aria-hidden="true">🍪</div>
       <div class="cookie-banner__text">
         <div class="cookie-banner__title">Sütiket (cookie-kat) használunk</div>
         <div class="cookie-banner__desc">Weboldalunk alapvető működéshez szükséges és analitikai sütiket használ. Az „Elfogadom" gombra kattintva hozzájárul a sütik használatához. Bővebb info: <a href="#">adatvédelmi tájékoztató</a>.</div>
@@ -513,6 +514,23 @@
   </div>
 </div>
 
+
+<!-- COOKIE -->
+<div class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie tájékoztató">
+  <div class="container">
+    <div class="cookie-banner__inner">
+      <div class="cookie-banner__icon" aria-hidden="true">🍪</div>
+      <div class="cookie-banner__text">
+        <div class="cookie-banner__title" data-i18n="ck_title">Sütiket (cookie-kat) használunk</div>
+        <div class="cookie-banner__desc" data-i18n="ck_desc">Weboldalunk alapvető működéshez szükséges és analitikai sütiket használ.</div>
+      </div>
+      <div class="cookie-banner__actions">
+        <button class="cookie-btn-accept" data-i18n="ck_accept">✓ Elfogadom</button>
+        <button class="cookie-btn-decline" data-i18n="ck_decline">Elutasítom</button>
+      </div>
+    </div>
+  </div>
+</div>
 <script src="assets/js/main.js"></script>
 </body>
 </html>
