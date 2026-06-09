@@ -61,8 +61,57 @@
 <!-- HERO -->
 <section class="hero" aria-label="Bevezető">
   <div class="hero__bg" aria-hidden="true">
-    <img src="assets/img/gallery/galeria-marina-2019-02-26-13-33-33.jpg" alt="" width="1920" height="1080" fetchpriority="high" decoding="async"/>
+    <div class="hero__slideshow">
+      <div class="hero__slide hero__slide--1"></div>
+      <div class="hero__slide hero__slide--2"></div>
+      <div class="hero__slide hero__slide--3"></div>
+      <div class="hero__slide hero__slide--4"></div>
+    </div>
   </div>
+  <style>
+    .hero__slideshow {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    .hero__slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      animation: heroFade 20s infinite;
+      transform: scale(1.04);
+      transition: transform 8s ease;
+    }
+    .hero__slide--1 {
+      background-image: url('assets/img/gallery/galeria-marinatal-2-fore-2022-03-18-15-27-28.jpg');
+      animation-delay: 0s;
+    }
+    .hero__slide--2 {
+      background-image: url('assets/img/gallery/galeria-grillsteak-2022-03-18-15-23-38.jpg');
+      animation-delay: 5s;
+    }
+    .hero__slide--3 {
+      background-image: url('assets/img/gallery/galeria-souvlaki-2022-03-18-15-18-05.jpg');
+      animation-delay: 10s;
+    }
+    .hero__slide--4 {
+      background-image: url('assets/img/gallery/galeria-penne-carbonara-2022-03-18-15-21-00.jpg');
+      animation-delay: 15s;
+    }
+    @keyframes heroFade {
+      0%   { opacity: 0;    transform: scale(1.04); }
+      5%   { opacity: 1;    transform: scale(1.00); }
+      25%  { opacity: 1;    transform: scale(1.00); }
+      30%  { opacity: 0;    transform: scale(1.04); }
+      100% { opacity: 0;    transform: scale(1.04); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero__slide { animation: none; }
+      .hero__slide--1 { opacity: 1; }
+    }
+  </style>
   <div class="container">
     <div class="hero__content">
       <div class="hero__eyebrow" data-i18n="hero_eyebrow">Prémium étterem – 2011 óta</div>
