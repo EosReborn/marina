@@ -1,246 +1,510 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-  <meta charset="UTF-8"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <meta name="theme-color" content="#0a0a0a"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Marina Pizzeria &amp; Steakhouse galéria – Ételfotók és éttermi hangulat."/>
-  <title>Galéria – Marina Pizzeria &amp; Steakhouse</title>
-  <link rel="stylesheet" href="assets/css/style.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galéria – Marina Pizzéria &amp; Steakhouse</title>
+  <meta name="description" content="Marina Pizzéria &amp; Steakhouse éttermi galériája – pizzák, steakek, pasták, saláták és desszertek képei Mosonmagyaróváron.">
+
+  <!-- Preconnect for faster image loading -->
+  <link rel="preconnect" href="https://www.marinapizzeria.hu">
+
+  <style>
+    /* ─── Design tokens ──────────────────────────────────────────── */
+    :root {
+      --clr-bg:        #f9f6f1;
+      --clr-surface:   #ffffff;
+      --clr-brand:     #c0392b;      /* Marina red */
+      --clr-brand-dk:  #962d22;
+      --clr-text:      #1a1a1a;
+      --clr-muted:     #6b6b6b;
+      --clr-border:    #e4ddd4;
+      --clr-overlay:   rgba(15, 10, 5, 0.92);
+
+      --radius:        6px;
+      --gap:           12px;
+      --transition:    200ms ease;
+
+      --font-display:  'Georgia', 'Times New Roman', serif;
+      --font-body:     system-ui, -apple-system, sans-serif;
+    }
+
+    /* ─── Reset & base ───────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--clr-bg);
+      color: var(--clr-text);
+      font-family: var(--font-body);
+      line-height: 1.5;
+    }
+
+    /* ─── Page header ────────────────────────────────────────────── */
+    .gallery-header {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      border-bottom: 1px solid var(--clr-border);
+    }
+
+    .gallery-header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      color: var(--clr-text);
+    }
+
+    .gallery-header h1 span {
+      color: var(--clr-brand);
+    }
+
+    .gallery-header p {
+      margin-top: 0.5rem;
+      color: var(--clr-muted);
+      font-size: 0.95rem;
+    }
+
+    /* ─── Gallery grid ───────────────────────────────────────────── */
+    .gallery-section {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem 1rem 4rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);   /* mobile: 2 col */
+      gap: var(--gap);
+    }
+
+    @media (min-width: 640px) {
+      .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);  /* tablet: 3 col */
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .gallery-grid {
+        grid-template-columns: repeat(4, 1fr);  /* desktop: 4 col */
+      }
+    }
+
+    /* ─── Gallery item ───────────────────────────────────────────── */
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--clr-border);
+      cursor: pointer;
+      aspect-ratio: 4 / 3;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 350ms ease, filter 350ms ease;
+      /* Lazy loading shimmer placeholder */
+      background: linear-gradient(90deg, #ede8e0 25%, #f5f0e8 50%, #ede8e0 75%);
+      background-size: 200% 100%;
+    }
+
+    .gallery-item:hover img,
+    .gallery-item:focus-within img {
+      transform: scale(1.06);
+      filter: brightness(0.82);
+    }
+
+    /* Caption overlay on hover */
+    .gallery-item__caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 0.6rem 0.75rem;
+      background: linear-gradient(transparent, rgba(0,0,0,0.65));
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 500;
+      opacity: 0;
+      transform: translateY(4px);
+      transition: opacity var(--transition), transform var(--transition);
+      pointer-events: none;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .gallery-item:hover .gallery-item__caption,
+    .gallery-item:focus-within .gallery-item__caption {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Focus ring for keyboard users */
+    .gallery-item:focus-visible {
+      outline: 3px solid var(--clr-brand);
+      outline-offset: 2px;
+    }
+
+    /* ─── Lightbox ───────────────────────────────────────────────── */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: var(--clr-overlay);
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .lightbox.is-open {
+      display: flex;
+    }
+
+    .lightbox__backdrop {
+      position: absolute;
+      inset: 0;
+      cursor: zoom-out;
+    }
+
+    .lightbox__inner {
+      position: relative;
+      z-index: 1;
+      max-width: min(90vw, 1100px);
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .lightbox__img {
+      max-width: 100%;
+      max-height: calc(90vh - 80px);
+      object-fit: contain;
+      border-radius: var(--radius);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+      background: #222;
+    }
+
+    .lightbox__caption {
+      color: rgba(255,255,255,0.85);
+      font-size: 0.9rem;
+      text-align: center;
+      min-height: 1.4em;
+    }
+
+    .lightbox__close {
+      position: fixed;
+      top: 1rem;
+      right: 1.25rem;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 2rem;
+      line-height: 1;
+      cursor: pointer;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      transition: background var(--transition);
+      z-index: 2;
+    }
+
+    .lightbox__close:hover { background: rgba(255,255,255,0.15); }
+
+    .lightbox__nav {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.12);
+      border: none;
+      color: #fff;
+      font-size: 1.8rem;
+      line-height: 1;
+      cursor: pointer;
+      padding: 0.6rem 0.9rem;
+      border-radius: 4px;
+      transition: background var(--transition);
+      z-index: 2;
+    }
+
+    .lightbox__nav:hover { background: rgba(255,255,255,0.25); }
+    .lightbox__nav--prev { left: 0.5rem; }
+    .lightbox__nav--next { right: 0.5rem; }
+
+    .lightbox__counter {
+      position: fixed;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.6);
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+    }
+
+    /* ─── Loading skeleton animation ────────────────────────────── */
+    @keyframes shimmer {
+      to { background-position: -200% 0; }
+    }
+
+    .gallery-item img:not([src]) {
+      animation: shimmer 1.4s infinite linear;
+    }
+
+    /* ─── Reduced motion ─────────────────────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      .gallery-item img,
+      .gallery-item__caption,
+      .lightbox { transition: none; }
+    }
+  </style>
+
+  <!-- Structured data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    "name": "Marina Pizzéria & Steakhouse Galéria",
+    "description": "Éttermi képek: pizzák, steakek, pasták, saláták és desszertek",
+    "url": "https://www.marinapizzeria.hu/galeria",
+    "author": {
+      "@type": "Restaurant",
+      "name": "Marina Pizzéria & Steakhouse",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Királyhidai u. 50.",
+        "addressLocality": "Mosonmagyaróvár",
+        "addressCountry": "HU"
+      }
+    }
+  }
+  </script>
 </head>
+
 <body>
 
-<a href="#main" class="skip-link">Ugrás a tartalomhoz</a>
+  <header class="gallery-header">
+    <h1>Marina <span>Galéria</span></h1>
+    <p>Pizzéria &amp; Steakhouse – Mosonmagyaróvár</p>
+  </header>
 
-
-<nav class="nav scrolled" role="navigation" aria-label="Főnavigáció">
-  <div class="container"><div class="nav__inner">
-    <a href="index.html" class="nav__logo" aria-label="Marina főoldal">
-      <span class="nav__logo-main">Marina</span>
-      <span class="nav__logo-sub">Pizzeria &amp; Steakhouse</span>
-    </a>
-    <ul class="nav__links" role="list">
-      <li><a href="index.html" class="nav__link" data-i18n="nav_home">Főoldal</a></li>
-      <li><a href="etlap.html" class="nav__link" data-i18n="nav_menu">Étlap</a></li>
-      <li><a href="rolunk.html" class="nav__link" data-i18n="nav_about">Rólunk</a></li>
-      <li><a href="galeria.html" class="nav__link" data-i18n="nav_gallery">Galéria</a></li>
-      <li><a href="kapcsolat.html" class="nav__link" data-i18n="nav_contact">Kapcsolat</a></li>
-    </ul>
-    <div class="nav__cta">
-      <div class="lang-switcher" role="group" aria-label="Nyelvválasztó">
-        <button class="lang-btn active" data-lang="hu">HU</button>
-        <button class="lang-btn" data-lang="en">EN</button>
-        <button class="lang-btn" data-lang="de">DE</button>
+  <main>
+    <section class="gallery-section" aria-label="Éttermi képek galériája">
+      <div class="gallery-grid" id="galleryGrid" role="list">
+        <!-- JS renders gallery items here -->
       </div>
-      <a href="tel:+3620123456" class="btn btn-gold"><span data-i18n="nav_book">Foglalás</span></a>
+    </section>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Képnézegető">
+    <div class="lightbox__backdrop" id="lbBackdrop"></div>
+    <div class="lightbox__inner">
+      <img class="lightbox__img" id="lbImg" src="" alt="">
+      <p class="lightbox__caption" id="lbCaption"></p>
     </div>
-    <button class="nav__hamburger" aria-label="Menü megnyitása" aria-expanded="false" aria-controls="mobileNav">
-      <span></span><span></span><span></span>
-    </button>
-  </div></div>
-</nav>
-<nav class="nav__mobile" id="mobileNav" aria-label="Mobilnavigáció">
-  <a href="index.html" class="nav__mobile-link" data-i18n="nav_home">Főoldal</a>
-  <a href="etlap.html" class="nav__mobile-link" data-i18n="nav_menu">Étlap</a>
-  <a href="rolunk.html" class="nav__mobile-link" data-i18n="nav_about">Rólunk</a>
-  <a href="galeria.html" class="nav__mobile-link" data-i18n="nav_gallery">Galéria</a>
-  <a href="kapcsolat.html" class="nav__mobile-link" data-i18n="nav_contact">Kapcsolat</a>
-  <a href="tel:+3620123456" class="btn btn-gold" style="margin-top:24px;justify-content:center;" data-i18n="nav_book">Foglalás</a>
-  <div class="lang-switcher" style="margin-top:24px;" role="group">
-    <button class="lang-btn active" data-lang="hu">HU</button>
-    <button class="lang-btn" data-lang="en">EN</button>
-    <button class="lang-btn" data-lang="de">DE</button>
+    <button class="lightbox__close" id="lbClose" aria-label="Bezárás">&#x2715;</button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lbPrev" aria-label="Előző kép">&#8249;</button>
+    <button class="lightbox__nav lightbox__nav--next" id="lbNext" aria-label="Következő kép">&#8250;</button>
+    <div class="lightbox__counter" id="lbCounter" aria-live="polite"></div>
   </div>
-</nav>
 
-<main id="main">
-<!-- ── PAGE HERO ── -->
-<section class="page-hero">
-  <div class="page-hero__bg">
-    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1600&q=85" alt="Galéria háttér" loading="eager"/>
-  </div>
-  <div class="container">
-    <div class="page-hero__content">
-      <div class="label">Pillanatok</div>
-      <h1 class="page-hero__title">Galéria</h1>
-      <p style="color:var(--white-dim);font-size:1.05rem;margin-top:16px;max-width:500px;">
-        Ételeink és éttermi hangulatunk egy pillantásnyi képben.
-      </p>
-    </div>
-  </div>
-</section>
+  <script>
+    // ─── Image data ───────────────────────────────────────────────
+    const BASE = 'https://www.marinapizzeria.hu/img/gallery/';
 
-<!-- ── GALLERY ── -->
-<div class="gallery-page">
-  <div class="container">
-    <div class="gallery-filter reveal">
-      <button class="gallery-filter-btn active" data-cat="all">Összes</button>
-      <button class="gallery-filter-btn" data-cat="etel">Ételek</button>
-      <button class="gallery-filter-btn" data-cat="etterem">Étterem</button>
-      <button class="gallery-filter-btn" data-cat="hangulat">Hangulat</button>
-    </div>
+    const images = [
+      { src: 'galeria--2022-03-18-15-27-54.jpg',                            alt: 'Árváltozás – aktuális árak a honlapon' },
+      { src: 'galeria-calzone-nutella-2023-06-28-21-25-47.jpg',             alt: 'Calzone nutellával' },
+      { src: 'galeria-marinatal-2-fore-2022-03-18-15-27-28.jpg',            alt: 'Marinatál 2 főre' },
+      { src: 'galeria-dinsztelt-hagymas-steak-2022-03-18-15-25-50.jpg',     alt: 'Dinsztelt hagymás steak' },
+      { src: 'galeria-hagymasrostelyos-2022-03-18-15-24-19.jpg',            alt: 'Hagymásrostélyos' },
+      { src: 'galeria-polpetti-2022-03-18-15-17-18.jpg',                    alt: 'Polpetti' },
+      { src: 'galeria-souvlaki-2022-03-18-15-18-05.jpg',                    alt: 'Souvlaki' },
+      { src: 'galeria-kep-2021-01-13-22-01-10.jpg',                         alt: 'Marina étterem' },
+      { src: 'galeria-novembee-2020-11-01-09-11-49.jpg',                    alt: 'November – havi ajánlat' },
+      { src: 'galeria-oktober-2020-10-27-16-26-09.jpg',                     alt: 'Október – havi ajánlat' },
+      { src: 'galeria-julius-2020-06-28-16-51-01.jpg',                      alt: 'Július – havi ajánlat' },
+      { src: '1.jpg',                                                        alt: 'Marina étterem – 1' },
+      { src: '2.jpg',                                                        alt: 'Marina étterem – 2' },
+      { src: 'galeria-ajandekutalvany-2018-03-05-09-07-28.jpg',             alt: 'Ajándékutalvány' },
+      { src: '5.jpg',                                                        alt: 'Marina étterem – 5' },
+      { src: '6.jpg',                                                        alt: 'Marina étterem – 6' },
+      { src: '8.jpg',                                                        alt: 'Marina étterem – 8' },
+      { src: '13.jpg',                                                       alt: 'Marina étterem – 13' },
+      { src: '19.jpg',                                                       alt: 'Marina étterem – 19' },
+      { src: '33.jpg',                                                       alt: 'Marina étterem – 33' },
+      { src: '35.jpg',                                                       alt: 'Marina étterem – 35' },
+      { src: '36.jpg',                                                       alt: 'Marina étterem – 36' },
+      { src: '37.jpg',                                                       alt: 'Marina étterem – 37' },
+      { src: '38.jpg',                                                       alt: 'Marina étterem – 38' },
+      { src: '40.jpg',                                                       alt: 'Marina étterem – 40' },
+      { src: '41.jpg',                                                       alt: 'Marina étterem – 41' },
+      { src: '43.jpg',                                                       alt: 'Marina étterem – 43' },
+      { src: '45.jpg',                                                       alt: 'Marina étterem – 45' },
+      { src: '46.jpg',                                                       alt: 'Marina étterem – 46' },
+      { src: '49.jpg',                                                       alt: 'Marina étterem – 49' },
+      { src: '50.jpg',                                                       alt: 'Marina étterem – 50' },
+      { src: '51.jpg',                                                       alt: 'Marina étterem – 51' },
+      { src: '52.jpg',                                                       alt: 'Marina étterem – 52' },
+      { src: '53.jpg',                                                       alt: 'Marina étterem – 53' },
+      { src: '54.jpg',                                                       alt: 'Marina étterem – 54' },
+      { src: '56.jpg',                                                       alt: 'Marina étterem – 56' },
+      { src: '58.jpg',                                                       alt: 'Marina étterem – 58' },
+      { src: '60.jpg',                                                       alt: 'Marina étterem – 60' },
+      { src: '61.jpg',                                                       alt: 'Marina étterem – 61' },
+      { src: '64.jpg',                                                       alt: 'Marina étterem – 64' },
+      { src: '65.jpg',                                                       alt: 'Marina étterem – 65' },
+      { src: '66.jpg',                                                       alt: 'Marina étterem – 66' },
+      { src: '67.jpg',                                                       alt: 'Marina étterem – 67' },
+      { src: '68.jpg',                                                       alt: 'Vegyes sajttál' },
+      { src: 'galeria-steak-chili-con-carne-2018-03-05-09-12-23.jpg',       alt: 'Steak & chili con carne' },
+      { src: 'galeria-marina-2019-02-26-13-33-33.jpg',                      alt: 'Marina étterem' },
+      { src: 'galeria-kep-2019-04-14-16-37-28.jpg',                         alt: 'Marina étterem belső' },
+      { src: 'galeria-terasz-2020-06-23-18-58-16.jpg',                      alt: 'Terasz' },
+      { src: 'galeria-tatar-2022-03-18-14-52-34.jpg',                       alt: 'Tatár bifsztek' },
+      { src: 'galeria-bruscetta-2022-03-18-14-52-57.jpg',                   alt: 'Bruschetta' },
+      { src: 'galeria-marina-salata-2022-03-18-14-53-57.jpg',               alt: 'Marina saláta' },
+      { src: 'galeria-thai-sultteszta-2022-03-18-14-54-33.jpg',             alt: 'Thai sülttészta' },
+      { src: 'galeria-vitamin-salata-2022-03-18-15-05-29.jpg',              alt: 'Vitamin saláta' },
+      { src: 'galeria-thai-sult-teszta-kiralyrakkal-2022-03-18-15-11-35.jpg', alt: 'Thai sült tészta királyrákkal' },
+      { src: 'galeria-vitorlasok-kedvence-2022-03-18-15-11-58.jpg',         alt: 'Vitorlások kedvence' },
+      { src: 'galeria-cezar-salata-2022-03-18-15-12-22.jpg',                alt: 'Cézár saláta' },
+      { src: 'galeria-forro-malna-vaniliaval-2022-03-18-15-12-53.jpg',      alt: 'Forró málna vaníliával' },
+      { src: 'galeria-csokis-muffin-2022-03-18-15-13-19.jpg',               alt: 'Csokis muffin' },
+      { src: 'galeria-gundel-palacsinta-2022-03-18-15-13-54.jpg',           alt: 'Gundel palacsinta' },
+      { src: 'galeria-lekvaros-palacsinta-2022-03-18-15-14-19.jpg',         alt: 'Lekváros palacsinta' },
+      { src: 'galeria-kakaos-palacsinta-2022-03-18-15-14-45.jpg',           alt: 'Kakaós palacsinta' },
+      { src: 'galeria-nyariwok-2022-03-18-15-15-06.jpg',                    alt: 'Nyári wok' },
+      { src: 'galeria-csirknyars-2022-03-18-15-16-10.jpg',                  alt: 'Csirkenyárs' },
+      { src: 'galeria-rantott-serteskaraj-2022-03-18-15-16-56.jpg',         alt: 'Rántott sertéskaraj' },
+      { src: 'galeria-csirkewok-2022-03-18-15-17-43.jpg',                   alt: 'Csirkewok' },
+      { src: 'galeria-csirkenyars-hazi-2022-03-18-15-18-33.jpg',            alt: 'Csirkenyárs házi' },
+      { src: 'galeria-parizszi-szelet-2022-03-18-15-19-01.jpg',             alt: 'Párizszi szelet' },
+      { src: 'galeria-rantott-csirkecombfile-2022-03-18-15-19-38.jpg',      alt: 'Rántott csirkecombfilé' },
+      { src: 'galeria-grillezett-fogasfile-2022-03-18-15-20-09.jpg',        alt: 'Grillezett fogasfilé' },
+      { src: 'galeria-grillezett-lazacfile-2022-03-18-15-20-33.jpg',        alt: 'Grillezett lazacfilé' },
+      { src: 'galeria-penne-carbonara-2022-03-18-15-21-00.jpg',             alt: 'Penne carbonara' },
+      { src: 'galeria-bolognai-spagetti-2022-03-18-15-21-26.jpg',           alt: 'Bolognai spagetti' },
+      { src: 'galeria-currys-csirkewok-2022-03-18-15-21-51.jpg',            alt: 'Currys csirkewok' },
+      { src: 'galeria-gyros-tzatziki-hasabbal-es-vitaminsalival-2022-03-18-15-22-52.jpg', alt: 'Gyros tzatzikivel, hasábbal és vitaminsalátával' },
+      { src: 'galeria-grillsteak-2022-03-18-15-23-38.jpg',                  alt: 'Grillsteak' },
+      { src: 'galeria-fokhagymas-steak-2022-03-18-15-24-44.jpg',            alt: 'Fokhagymás steak' },
+      { src: 'galeria-csirkemell-classico-2022-03-18-15-25-16.jpg',         alt: 'Csirkemell Classico' },
+      { src: 'galeria-gombas-steak-2022-03-18-15-26-30.jpg',                alt: 'Gombás steak' },
+      { src: 'galeria-antipasti-itali-2022-03-18-15-27-01.jpg',             alt: 'Antipasti Itali' },
+    ];
 
-    <div class="masonry" role="list">
-      <div class="masonry-item reveal" data-cat="etel" role="listitem">
-        <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600&q=85" alt="Marina Signature Pizza" loading="lazy"/>
-        <div class="masonry-item__overlay"><span class="masonry-item__overlay-icon">🔍</span></div>
-      </div>
-      <div class="masonry-item reveal" data-cat="etterem" role="listitem">
-        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=85" alt="Étterem belső" loading="lazy"/>
-        <div class="masonry-item__overlay"><span class="masonry-item__overlay-icon">🔍</span></div>
-      </div>
-      <div class="masonry-item reveal" data-cat="etel" role="listitem">
-        <img src="https://images.unsplash.com/photo-1558030006-450675393462?w=600&q=85" alt="Ribeye steak" loading="lazy"/>
-        <div class="masonry-item__overlay"><span class="masonry-item__overlay-icon">🔍</span></div>
-      </div>
-      <div class="masonry-item reveal" data-cat="hangulat" role="listitem">
-        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=85" alt="Étterem este" loading="lazy"/>
-        <div class="masonry-item__overlay"><span class="masonry-item__overlay-icon">🔍</span></div>
-      </div>
-      <div class="masonry-item reveal" data-cat="etel" role="listitem">
-        <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&q=85" alt="Carbonara pasta" loading="lazy"/>
-        <div class="masonry-item__overlay"><span class="masonry-item__overlay-icon">🔍</span></div>
-      </div>
-      <div class="masonry-item reveal" data-cat="etterem" role="listitem">
-        <img src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=600&q=85" alt="Étterem belső 2" loading="lazy"/>
-        <div class="masonry-item__overlay"><span class="masonry-item__overlay-icon">🔍</span></div>
-      </div>
-      <div class="masonry-item reveal" data-cat="etel" role="listitem">
-        <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=600&q=85" alt="Tiramisu" loading="lazy"/>
-        <div class="masonry-item__overlay"><span class="masonry-item__overlay-icon">🔍</span></div>
-      </div>
-      <div class="masonry-item reveal" data-cat="hangulat" role="listitem">
-        <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&q=85" alt="Borkínálat" loading="lazy"/>
-        <div class="masonry-item__overlay"><span class="masonry-item__overlay-icon">🔍</span></div>
-      </div>
-      <div class="masonry-item reveal" data-cat="etel" role="listitem">
-        <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&q=85" alt="Pizza detail" loading="lazy"/>
-        <div class="masonry-item__overlay"><span class="masonry-item__overlay-icon">🔍</span></div>
-      </div>
-      <div class="masonry-item reveal" data-cat="etterem" role="listitem">
-        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=85" alt="Bár" loading="lazy"/>
-        <div class="masonry-item__overlay"><span class="masonry-item__overlay-icon">🔍</span></div>
-      </div>
-      <div class="masonry-item reveal" data-cat="etel" role="listitem">
-        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=85" alt="Burger" loading="lazy"/>
-        <div class="masonry-item__overlay"><span class="masonry-item__overlay-icon">🔍</span></div>
-      </div>
-      <div class="masonry-item reveal" data-cat="hangulat" role="listitem">
-        <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=600&q=85" alt="Séf" loading="lazy"/>
-        <div class="masonry-item__overlay"><span class="masonry-item__overlay-icon">🔍</span></div>
-      </div>
-      <div class="masonry-item reveal" data-cat="etel" role="listitem">
-        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=85" alt="Desszert" loading="lazy"/>
-        <div class="masonry-item__overlay"><span class="masonry-item__overlay-icon">🔍</span></div>
-      </div>
-      <div class="masonry-item reveal" data-cat="etterem" role="listitem">
-        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=85" alt="Tálalás" loading="lazy"/>
-        <div class="masonry-item__overlay"><span class="masonry-item__overlay-icon">🔍</span></div>
-      </div>
-      <div class="masonry-item reveal" data-cat="hangulat" role="listitem">
-        <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600&q=85" alt="Koktélok" loading="lazy"/>
-        <div class="masonry-item__overlay"><span class="masonry-item__overlay-icon">🔍</span></div>
-      </div>
-    </div>
-  </div>
-</div>
+    // ─── Render gallery items ─────────────────────────────────────
+    const grid = document.getElementById('galleryGrid');
 
-<!-- Lightbox -->
-<div class="lightbox" role="dialog" aria-label="Képnézegető" aria-modal="true">
-  <button class="lightbox__close" aria-label="Bezárás">✕</button>
-  <button class="lightbox__nav lightbox__prev" aria-label="Előző kép">‹</button>
-  <img class="lightbox__img" src="" alt="Galéria kép"/>
-  <button class="lightbox__nav lightbox__next" aria-label="Következő kép">›</button>
-</div>
+    images.forEach((img, index) => {
+      const fullUrl = BASE + img.src;
 
-<!-- ── CTA ── -->
-<section class="section cta-booking" style="padding:80px 0;">
-  <div class="container">
-    <div class="cta-booking__inner reveal">
-      <h2 class="cta-booking__title">Foglaljon asztalt<br/>egy este emlékeire</h2>
-      <div class="cta-booking__actions">
-        <a href="foglalas.html" class="btn btn-gold"><span>🗓 Asztalt foglalok</span></a>
-      </div>
-    </div>
-  </div>
-</section>
+      const item = document.createElement('div');
+      item.className = 'gallery-item';
+      item.setAttribute('role', 'listitem');
+      item.setAttribute('tabindex', '0');
+      item.setAttribute('aria-label', img.alt || `Kép ${index + 1}`);
 
-</main>
+      const el = document.createElement('img');
+      el.alt = img.alt;
+      el.loading = 'lazy';         // native lazy loading
+      el.decoding = 'async';
+      el.src = fullUrl;
 
-<!-- ── FOOTER ── -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer__grid">
-      <div>
-        <div class="footer__brand-name">Marina</div>
-        <div class="footer__brand-sub">Pizzeria &amp; Steakhouse</div>
-        <p class="footer__brand-text">Prémium olasz konyha és steakhouse élmény Budapest szívében.</p>
-      </div>
-      <div>
-        <div class="footer__col-title">Oldalak</div>
-        <ul class="footer__links">
-          <li><a href="index.html" class="footer__link">Főoldal</a></li>
-          <li><a href="etlap.html" class="footer__link">Étlap</a></li>
-          <li><a href="rolunk.html" class="footer__link">Rólunk</a></li>
-          <li><a href="galeria.html" class="footer__link" aria-current="page">Galéria</a></li>
-          <li><a href="foglalas.html" class="footer__link">Foglalás</a></li>
-          <li><a href="kapcsolat.html" class="footer__link">Kapcsolat</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer__col-title">Nyitvatartás</div>
-        <div class="footer__info">
-          <div class="footer__info-item"><span class="footer__info-icon">🕐</span><span>H–Cs: 11:00 – 22:00</span></div>
-          <div class="footer__info-item"><span class="footer__info-icon">🕐</span><span>P–Szo: 11:00 – 23:30</span></div>
-          <div class="footer__info-item"><span class="footer__info-icon">🕐</span><span>Vas: 12:00 – 22:00</span></div>
-        </div>
-      </div>
-      <div>
-        <div class="footer__col-title">Elérhetőség</div>
-        <div class="footer__info">
-          <div class="footer__info-item"><span class="footer__info-icon">📍</span><span>1051 Budapest,<br/>Október 6. utca 14.</span></div>
-          <div class="footer__info-item"><span class="footer__info-icon">📞</span><a href="tel:+3620123456" class="footer__link">+36 20 123 456</a></div>
-        </div>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      <span>© 2025 Marina Pizzeria &amp; Steakhouse.</span>
-    </div>
-  </div>
-</footer>
+      // Explicit dimensions hint (all originals are landscape)
+      el.width  = 800;
+      el.height = 600;
 
+      const caption = document.createElement('span');
+      caption.className = 'gallery-item__caption';
+      caption.textContent = img.alt;
+      caption.setAttribute('aria-hidden', 'true');
 
-      <div class="cookie-banner__text">
-        <div class="cookie-banner__title">Sütiket (cookie-kat) használunk</div>
-        <div class="cookie-banner__desc">Weboldalunk alapvető működéshez szükséges és analitikai sütiket használ. Az „Elfogadom" gombra kattintva hozzájárul a sütik használatához. Bővebb info: <a href="#">adatvédelmi tájékoztató</a>.</div>
-      </div>
-      <div class="cookie-banner__actions">
-        <button class="cookie-btn-accept">✓ Elfogadom</button>
-        <button class="cookie-btn-decline">Elutasítom</button>
-      </div>
-    </div>
-  </div>
-</div>
+      item.appendChild(el);
+      if (img.alt) item.appendChild(caption);
 
+      // Open lightbox on click or Enter/Space
+      item.addEventListener('click', () => openLightbox(index));
+      item.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(index); }
+      });
 
-<!-- COOKIE -->
-<div class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie tájékoztató">
-  <div class="container">
-    <div class="cookie-banner__inner">
-      <div class="cookie-banner__icon" aria-hidden="true">🍪</div>
-      <div class="cookie-banner__text">
-        <div class="cookie-banner__title" data-i18n="ck_title">Sütiket (cookie-kat) használunk</div>
-        <div class="cookie-banner__desc" data-i18n="ck_desc">Weboldalunk alapvető működéshez szükséges és analitikai sütiket használ.</div>
-      </div>
-      <div class="cookie-banner__actions">
-        <button class="cookie-btn-accept" data-i18n="ck_accept">✓ Elfogadom</button>
-        <button class="cookie-btn-decline" data-i18n="ck_decline">Elutasítom</button>
-      </div>
-    </div>
-  </div>
-</div>
-<script src="assets/js/main.js"></script>
+      grid.appendChild(item);
+    });
+
+    // ─── Lightbox ─────────────────────────────────────────────────
+    const lightbox  = document.getElementById('lightbox');
+    const lbImg     = document.getElementById('lbImg');
+    const lbCaption = document.getElementById('lbCaption');
+    const lbCounter = document.getElementById('lbCounter');
+    const lbClose   = document.getElementById('lbClose');
+    const lbPrev    = document.getElementById('lbPrev');
+    const lbNext    = document.getElementById('lbNext');
+    const lbBackdrop = document.getElementById('lbBackdrop');
+
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+      currentIndex = index;
+      updateLightbox();
+      lightbox.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      lbClose.focus();
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('is-open');
+      document.body.style.overflow = '';
+      // Return focus to the triggering item
+      const items = grid.querySelectorAll('.gallery-item');
+      if (items[currentIndex]) items[currentIndex].focus();
+    }
+
+    function updateLightbox() {
+      const { src, alt } = images[currentIndex];
+      lbImg.src = BASE + src;
+      lbImg.alt = alt;
+      lbCaption.textContent = alt;
+      lbCounter.textContent = `${currentIndex + 1} / ${images.length}`;
+    }
+
+    function showPrev() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      updateLightbox();
+    }
+
+    function showNext() {
+      currentIndex = (currentIndex + 1) % images.length;
+      updateLightbox();
+    }
+
+    lbClose.addEventListener('click', closeLightbox);
+    lbBackdrop.addEventListener('click', closeLightbox);
+    lbPrev.addEventListener('click', showPrev);
+    lbNext.addEventListener('click', showNext);
+
+    // Keyboard navigation
+    document.addEventListener('keydown', e => {
+      if (!lightbox.classList.contains('is-open')) return;
+      if (e.key === 'Escape')      closeLightbox();
+      if (e.key === 'ArrowLeft')   showPrev();
+      if (e.key === 'ArrowRight')  showNext();
+    });
+
+    // Touch / swipe support
+    let touchStartX = 0;
+    lightbox.addEventListener('touchstart', e => {
+      touchStartX = e.changedTouches[0].clientX;
+    }, { passive: true });
+    lightbox.addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(dx) > 50) dx < 0 ? showNext() : showPrev();
+    }, { passive: true });
+  </script>
 </body>
 </html>
